@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: yogun <yogun@s tudent.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 17:28:58 by yogun             #+#    #+#             */
-/*   Updated: 2023/02/01 23:19:27 by yogun            ###   ########.fr       */
+/*   Updated: 2023/02/02 12:01:39 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <iomanip>
 
 class Contact {
 	public:

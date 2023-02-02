@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 17:38:27 by yogun             #+#    #+#             */
-/*   Updated: 2023/02/01 23:46:01 by yogun            ###   ########.fr       */
+/*   Updated: 2023/02/02 11:57:18 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@
 	bool		is_loop;
 
 	is_loop = true;
-	while (is_loop == true)
+	std::cout << "PHONEBOOK: ";
+	while (is_loop == true && std::getline(std::cin, line))
 	{
-		std::cout << "PHONEBOOK: ";
-		std::getline(std::cin, line);
 		if (line.compare("ADD") == 0)
 			phonebook.add();
 		else if (line.compare("SEARCH") == 0)
