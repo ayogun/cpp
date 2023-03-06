@@ -6,7 +6,7 @@
 #    By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 12:06:55 by yogun             #+#    #+#              #
-#    Updated: 2023/03/06 15:45:24 by yogun            ###   ########.fr        #
+#    Updated: 2023/03/06 19:08:40 by yogun            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 CC = g++
 
 # Flags for the compiler
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 # Source files for the project
 SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
