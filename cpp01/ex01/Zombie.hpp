@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 18:18:33 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/06 19:20:59 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/07 08:30:21 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 class Zombie {
 public:
     Zombie(); // Default constructor
-    Zombie(std::string name); // Constructor that takes a name
     ~Zombie(); // Deconstructor
 
     void setName(std::string name); // Setter for the name

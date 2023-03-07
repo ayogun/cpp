@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/02 12:06:55 by yogun             #+#    #+#              #
-#    Updated: 2023/03/06 21:21:16 by yogun            ###   ########.fr        #
+#    Created: 2023/03/06 21:34:07 by yogun             #+#    #+#              #
+#    Updated: 2023/03/07 11:12:03 by yogun            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,10 @@ CC = g++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 # Set the name of the executable to create
-NAME = zombie_horde
+NAME = Harlingen
 
 # Set the source files to compile
-SRC = main.cpp Zombie.cpp zombieHorde.cpp
+SRC = main.cpp Harl.cpp
 
 # Generate a list of object files from the source files
 OBJ = $(SRC:.cpp=.o)

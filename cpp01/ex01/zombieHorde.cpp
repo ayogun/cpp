@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 18:23:03 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/06 19:29:37 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/07 08:32:54 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Zombie* zombieHorde(int N, std::string name) {
 
     Zombie* horde = new Zombie[N]; // Allocate N Zombie objects in a single allocation
     for (int i = 0; i < N; i++) {
-        horde[i].setName(name + std::to_string(i)); // Initialize each zombie with the same name
+        horde[i].setName(name + "-number-" + std::to_string(i)); // Initialize each zombie with the same name
     }
     return horde; // Return a pointer to the first zombie in the horde
 }
