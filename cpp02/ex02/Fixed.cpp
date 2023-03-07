@@ -1,0 +1,138 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/07 14:31:25 by yogun             #+#    #+#             */
+/*   Updated: 2023/03/07 20:51:39 by yogun            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Fixed.hpp"
+
+// Constructor without parameters
+Fixed::Fixed() : _rawBits(0) {}
+
+// Constructor with a constant integer parameter
+Fixed::Fixed(const int intNumber) : _rawBits(intNumber << _rawBits) {}
+
+// Constructor with a constant floating-point parameter
+Fixed::Fixed(const float floatNumber) : _rawBits(roundf(floatNumber * (1 << _rawBits))) {}
+
+// Copy constructor
+Fixed::Fixed(const Fixed& other) : _rawBits(other.getRawBits()) {}
+
+// Destructor
+Fixed::~Fixed() {}
+
+// Copy assignment operator
+Fixed& Fixed::operator=(const Fixed& other) {
+    if (this != &other) {
+        _rawBits = other.getRawBits();
+    }
+    return *this;
+}
+
+// Overload of the << operator for output stream
+std::ostream& operator<<(std::ostream& out, const Fixed& fixedNumber) {
+    out << fixedNumber.toFloat();
+    return out;
+}
+
+// Member function that returns the raw value of the fixed-point number
+int Fixed::getRawBits() const {
+    return _rawBits;
+}
+
+// Member function that sets the raw value of the fixed-point number
+void Fixed::setRawBits(const int raw) {
+    _rawBits = raw;
+}
+
+// Member function that converts the fixed-point number to a floating-point number
+float Fixed::toFloat() const {
+    return static_cast<float>(_rawBits) / (1 << _rawBits);
+}
+
+// Member function that converts the fixed-point number to an integer
+int Fixed::toInt() const {
+    return _rawBits >> _rawBits;
+}
+
+// Overload of the comparison operator <
+bool Fixed::operator<(const Fixed& other) const {
+    return _rawBits < other.getRawBits();
+}
+
+// Overload of the comparison operator >
+bool Fixed::operator>(const Fixed& other) const {
+    return _rawBits > other.getRawBits();
+}
+
+// Overload of the comparison operator <=
+bool Fixed::operator<=(const Fixed& other) const {
+    return _rawBits <= other.getRawBits();
+}
+
+// Overload of the comparison operator >=
+bool Fixed::operator>=(const Fixed& other) const {
+    return _rawBits >= other.getRawBits();
+}
+
+// Overload of the comparison operator ==
+bool Fixed::operator==(const Fixed& other) const {
+    return _rawBits == other.getRawBits();
+}
+
+// Overload of the comparison operator !=
+bool Fixed::operator!=(const Fixed& other) const {
+    return _rawBits != other.getRawBits();
+}
+
+// Overload of the arithmetic operator +
+Fixed Fixed::operator+(const Fixed& other) const {
+    return Fixed(toFloat() + other.toFloat());
+}
+
+// Overload of the arithmetic operator -
+Fixed Fixed::operator-(const Fixed& other) const {
+    return Fixed(toFloat() - other.toFloat());
+}
+
+// Overload of the arithmetic operator *
+Fixed Fixed::operator*(const Fixed& other) const {
+    return Fixed(toFloat() * other.toFloat());
+}
+
+// Overload of the arithmetic operator /
+Fixed Fixed::operator/(const Fixed& other) const {
+    return Fixed(toFloat() / other.toFloat());
+}
+
+// Overload of the pre-increment operator ++
+Fixed& Fixed::operator++() {
+    _rawBits += 1;
+    return *this;
+}
+
+// Overload of the post-increment operator ++
+Fixed Fixed::operator++(int) {
+    Fixed temp(*this);
+    operator++();
+    return temp;
+}
+
+// Overload of the pre-decrement operator --
+Fixed& Fixed::operator--() {
+    _rawBits -= 1;
+    return *this;
+}
+
+// Overload of the post-decrement operator --
+Fixed Fixed::operator--(int) {
+	Fixed temp(*this);
+	operator--();
+	return temp;
+}
