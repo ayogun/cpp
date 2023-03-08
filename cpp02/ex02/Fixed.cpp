@@ -6,26 +6,38 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:31:25 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/07 20:51:39 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/08 13:53:02 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+const int Fixed::_fractionalBits = 8;
+
 // Constructor without parameters
-Fixed::Fixed() : _rawBits(0) {}
+Fixed::Fixed() : _rawBits(0) {
+	return;
+}
 
 // Constructor with a constant integer parameter
-Fixed::Fixed(const int intNumber) : _rawBits(intNumber << _rawBits) {}
+Fixed::Fixed(const int intNumber) {
+	this->_rawBits = intNumber << _fractionalBits;
+}
 
 // Constructor with a constant floating-point parameter
-Fixed::Fixed(const float floatNumber) : _rawBits(roundf(floatNumber * (1 << _rawBits))) {}
+Fixed::Fixed(const float floatNumber) {
+	this->_rawBits = roundf(floatNumber * (1 << _fractionalBits));
+}
 
 // Copy constructor
-Fixed::Fixed(const Fixed& other) : _rawBits(other.getRawBits()) {}
+Fixed::Fixed(const Fixed& other) {
+	*this = other;
+}
 
 // Destructor
-Fixed::~Fixed() {}
+Fixed::~Fixed() {
+	return;
+}
 
 // Copy assignment operator
 Fixed& Fixed::operator=(const Fixed& other) {
@@ -53,12 +65,12 @@ void Fixed::setRawBits(const int raw) {
 
 // Member function that converts the fixed-point number to a floating-point number
 float Fixed::toFloat() const {
-    return static_cast<float>(_rawBits) / (1 << _rawBits);
+    return static_cast<float>(_rawBits) / (1 << _fractionalBits);
 }
 
 // Member function that converts the fixed-point number to an integer
 int Fixed::toInt() const {
-    return _rawBits >> _rawBits;
+    return _rawBits >> _fractionalBits;
 }
 
 // Overload of the comparison operator <
@@ -135,4 +147,26 @@ Fixed Fixed::operator--(int) {
 	Fixed temp(*this);
 	operator--();
 	return temp;
+}
+
+// Class member functions
+
+// Static member function that returns the smallest fixed-point number
+Fixed& Fixed::min(Fixed& a, Fixed& b) {
+	return a < b ? a : b;
+}
+
+// Static member function that returns the smallest fixed-point number
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b) {
+	return a < b ? a : b;
+}
+
+// Static member function that returns the largest fixed-point number
+Fixed& Fixed::max(Fixed& a, Fixed& b) {
+	return a > b ? a : b;
+}
+
+//	Static member function that returns the largest fixed-point number
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
+	return a > b ? a : b;
 }
