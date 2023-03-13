@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:55:35 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 22:26:16 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/13 23:36:21 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,51 @@
 # define FORM_HPP
 
 #include <string>
+#include <iostream>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
 public:
+    Form(); // default constructor
+    Form(const std::string& name, int sign, int execute); // parameterized constructor
+    Form(const Form& other); // copy constructor
+    virtual ~Form(); // virtual destructor
+
+    Form& operator=(const Form& other); // assignment operator overload
+
+    // exceptions for grades that are too high or low
     class GradeTooHighException : public std::exception {
     public:
-        virtual const char* what() const throw();
+        virtual const char* what() const throw() {
+            return "Grade is too high!";
+        }
     };
-
     class GradeTooLowException : public std::exception {
     public:
-        virtual const char* what() const throw();
+        virtual const char* what() const throw() {
+            return "Grade is too low!";
+        }
     };
 
-    Form(const std::string name, int signGrade, int execGrade);
-    ~Form();
-
-    const std::string& getName() const;
-    int getSignGrade() const;
-    int getExecGrade() const;
+    // getter methods
+    std::string getName() const;
     bool getIsSigned() const;
+    int getSignGrade() const;
+    int getExecuteGrade() const;
 
+    // sign method that takes a bureaucrat object and signs the form if grade is high enough
     void beSigned(const Bureaucrat& bureaucrat);
 
-    class FormNotSignedException : public std::exception {
-    public:
-        virtual const char* what() const throw();
-    };
-
-    virtual void execute(const Bureaucrat& executor) const = 0;
-
-protected:
-    const std::string name_;
-    const int signGrade_;
-    const int execGrade_;
-    bool isSigned_;
+private:
+    const std::string _name;
+    bool _isSigned;
+    const int _signGrade;
+    const int _executeGrade;
 };
 
+// overloaded operator for printing form details
 std::ostream& operator<<(std::ostream& os, const Form& form);
 
 #endif

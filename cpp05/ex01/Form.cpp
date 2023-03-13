@@ -6,66 +6,81 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:56:06 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 22:26:42 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/13 23:31:44 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(const std::string name, int signGrade, int execGrade) : name_(name), signGrade_(signGrade), execGrade_(execGrade), isSigned_(false)
-{
-    if (signGrade < 1 || execGrade < 1)
+// default constructor
+Form::Form() : _name("Default Form"), _isSigned(false), _signGrade(150), _executeGrade(150) {
+	
+}
+
+// parameterized constructor
+Form::Form(const std::string& name, int sign, int execute)
+    : _name(name), _isSigned(false), _signGrade(sign), _executeGrade(execute) {
+    // check if grades are valid
+    if (sign < 1 || execute < 1)
         throw GradeTooHighException();
-    if (signGrade > 150 || execGrade > 150)
+    else if (sign > 150 || execute > 150)
         throw GradeTooLowException();
 }
 
+// copy constructor
+Form::Form(const Form& other)
+    : _name(other.getName()), _isSigned(other.getIsSigned()), 
+    _signGrade(other.getSignGrade()), _executeGrade(other.getExecuteGrade()) {}
+
+// destructor
 Form::~Form() {}
 
-const std::string& Form::getName() const {
-    return name_;
+// assignment operator overload
+Form& Form::operator=(const Form& other) {
+    if (this != &other) {
+        _isSigned = other._isSigned;
+    }
+    return *this;
 }
 
-int Form::getSignGrade() const {
-    return signGrade_;
-}
-
-int Form::getExecGrade() const {
-    return execGrade_;
+// getter methods
+std::string Form::getName() const {
+    return _name;
 }
 
 bool Form::getIsSigned() const {
-    return isSigned_;
+    return _isSigned;
 }
 
+int Form::getSignGrade() const {
+    return _signGrade;
+}
+
+int Form::getExecuteGrade() const {
+    return _executeGrade;
+}
+
+// sign method that takes a bureaucrat object and signs the form if grade is high enough
 void Form::beSigned(const Bureaucrat& bureaucrat) {
-    if (bureaucrat.getGrade() <= signGrade_) {
-        isSigned_ = true;
+    if (bureaucrat.getGrade() <= _signGrade) {
+        _isSigned = true;
     }
     else {
         throw GradeTooLowException();
     }
 }
 
-const char* Form::GradeTooHighException::what() const throw() {
-    return "Grade too high";
-}
-
-const char* Form::GradeTooLowException::what() const throw() {
-    return "Grade too low";
-}
-
-const char* Form::FormNotSignedException::what() const throw() {
-    return "Form not signed";
-}
-
+// overloaded operator for printing form details
 std::ostream& operator<<(std::ostream& os, const Form& form) {
-    os << "Form " << form.getName() << ", sign grade " << form.getSignGrade() << ", exec grade " << form.getExecGrade() << ", signed ";
-    if (form.getIsSigned()) {
-        os << "yes";
-    }
-    else {
-        os << "no";
-    }
-    return os;
+os << "Form name: " << form.getName() << std::endl;
+os << "Sign grade required: " << form.getSignGrade() << std::endl;
+os << "Execute grade required: " << form.getExecuteGrade() << std::endl;
+os << "Is signed: ";
+if (form.getIsSigned()) {
+os << "yes" << std::endl;
+}
+else {
+os << "no" << std::endl;
+}
+return os;
 }

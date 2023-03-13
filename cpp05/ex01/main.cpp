@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:47:44 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 22:23:51 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/13 23:45:03 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int main()
 	{
 		try
 		{
-			Form		Impossible("Impossible", 0, 10);
-			Form		Impossible2("Impossible2", 1, 151);
+			Form		SampleForm("SampleForm", 0, 10);
+			Form		SampleForm2("SampleForm2", 1, 151);
 		}
 		catch(const std::exception& e)
 		{
@@ -66,7 +66,7 @@ int main()
 			std::cout << Student;
 			std::cout << Graduate;
 
-			Student.decrGrade();
+			Student.decrementGrade();
 			std::cout << Student;
 
 			Student.signForm(Graduate);

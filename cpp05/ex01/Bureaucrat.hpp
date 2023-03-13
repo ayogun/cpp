@@ -6,15 +6,18 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:45:59 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 21:46:01 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/13 23:50:16 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 public:
@@ -40,9 +43,11 @@ public:
     void incrementGrade();
     void decrementGrade();
 
+	void	signForm(Form & i);
+
 private:
-    std::string m_name;
-    int m_grade;
+    std::string _name;
+    int _grade;
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj);
