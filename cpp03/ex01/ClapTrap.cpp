@@ -1,13 +1,18 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
+// Default constructor
+ClapTrap::ClapTrap(void) {
+	std::cout << "ClapTrap default constructed with default constructor" << std::endl;
+}
+
 // Constructor that initializes the object with the given name and default values for hit points, energy points, and attack damage.
 ClapTrap::ClapTrap(const std::string& name) :
   name_(name),
   hitPoints_(10),
   energyPoints_(10),
   attackDamage_(0) {
-    std::cout << "ClapTrap " << name_ << " constructed" << std::endl;
+    std::cout << "ClapTrap " << name_ << " constructed with constructor" << std::endl;
 }
 
 // Copy constructor that initializes the object with the same values as another object.
@@ -66,5 +71,35 @@ std::string ClapTrap::getName() const {
 // Getter for attackDamage
 unsigned int ClapTrap::getAttackDamage() const {
     return attackDamage_;
+}
+
+// Getter for hitPoints
+unsigned int ClapTrap::getHitPoints() const {
+	return hitPoints_;
+}
+
+// Getter for energyPoints
+unsigned int ClapTrap::getEnergyPoints() const {
+	return energyPoints_;
+}
+
+// Setter for name
+void ClapTrap::setName(const std::string name) {
+	name_ = name;
+}
+
+// Setter for attackDamage
+void ClapTrap::setAttackDamage(unsigned int attackDamage) {
+	attackDamage_ = attackDamage;
+}
+
+// Setter for hitPoints
+void ClapTrap::setHitPoints(unsigned int hitPoints) {
+	hitPoints_ = hitPoints;
+}
+
+// Setter for energyPoints
+void ClapTrap::setEnergyPoints(unsigned int energyPoints) {
+	energyPoints_ = energyPoints;
 }
 

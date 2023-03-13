@@ -6,16 +6,24 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:30:37 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/12 21:48:10 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/13 14:23:09 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+// Default constructor
+ScavTrap::ScavTrap(void) {
+	std::cout << "SC4V-TP called default constructor!" << std::endl;
+}
+
 // Constructors
-ScavTrap::ScavTrap(std::string name)
-    : ClapTrap(name, 100, 50, 20) {
-    std::cout << "SC4V-TP " << getName() << " constructed!\n";
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+    std::cout << "SC4V-TP " << getName() << " constructed with constructor!\n";
+	setAttackDamage(20);
+	setEnergyPoints(50);
+	setHitPoints(100);
+	
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other)
@@ -37,9 +45,5 @@ void ScavTrap::guardGate() {
 void ScavTrap::attack(const std::string& target) {
     std::cout << "SC4V-TP " << getName() << " attacks " << target
               << ", causing " << getAttackDamage() << " points of damage!\n";
-}
-
-unsigned int ScavTrap::getAttackDamage() const {
-    return attackDamage_;
 }
 

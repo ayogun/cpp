@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:30:27 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/12 21:49:56 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/13 14:32:25 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,16 @@
 class ScavTrap : public ClapTrap
 {
 public:
-    ScavTrap(); // Default constructor
-    ScavTrap(const std::string& name); // Parameterized constructor
+    ScavTrap(const std::string name); // Constructor
     ScavTrap(const ScavTrap& other); // Copy constructor
-    ~ScavTrap(); // Destructor
-	unsigned int getAttackDamage() const;
+    ~ScavTrap(void); // Destructor
 
     // Override attack function to add ScavTrap specific message
     void attack(const std::string& target);
-    void guardGate(); // Special function
+    void guardGate(void); // Special function
+
+protected:
+	ScavTrap(void); // Default constructor. It is protected because we don't want to create a ScavTrap without a name
 };
 
 #endif // SCAVTRAP_HPP

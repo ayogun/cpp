@@ -6,32 +6,30 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:34:11 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/12 21:39:23 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/13 14:28:01 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main() {
-    // Create a ClapTrap object
+    std::cout << "Creating a ClapTrap" << std::endl;
     ClapTrap claptrap("CL4P-TP");
-
-    // Demonstrate ClapTrap's member functions
-    claptrap.attack("an enemy");
-    claptrap.takeDamage(5);
-    claptrap.beRepaired(2);
-
+    claptrap.attack("a bandit");
+    claptrap.takeDamage(15);
+    claptrap.beRepaired(10);
     std::cout << std::endl;
 
-    // Create a ScavTrap object
-    ScavTrap scavtrap("SCAV-TP");
-
-    // Demonstrate ScavTrap's member functions
-    scavtrap.attack("an enemy");
-    scavtrap.guardGate();
-    scavtrap.takeDamage(10);
+    std::cout << "Creating a ScavTrap" << std::endl;
+    ScavTrap scavtrap("SC4V-TP");
+    scavtrap.attack("a thief");
+    scavtrap.takeDamage(20);
     scavtrap.beRepaired(5);
+    scavtrap.guardGate();
+    std::cout << std::endl;
 
+    std::cout << "Destroying the ScavTrap and then the ClapTrap" << std::endl;
     return 0;
 }
