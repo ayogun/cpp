@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:30:27 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 14:43:35 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/13 14:43:28 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,4 @@ protected:
 	ScavTrap(void); // Default constructor. It is protected because we don't want to create a ScavTrap without a name
 };
 
-#endif 
+#endif
