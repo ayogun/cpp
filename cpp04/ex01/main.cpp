@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:42:12 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 17:17:59 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/13 20:51:32 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int main()
 	{
 		Animal *k[8];
 
-		int i = 0;
-		for (; i < 4; i++)
+		int i;
+		for (i = 0 ; i < 4; i++)
 			k[i] = new Dog();
-		for (; i < 8; i++)
+		for (i = 4; i < 7; i++)
 			k[i] = new Cat();
-		for (; i > 0; i--)
+		for (i = 7; i > 0; i--)
 		{
 			std::cout << "I'm animal number " << i;
 			std::cout << "  " << k[i-1]->getType() << std::endl;
@@ -54,7 +54,7 @@ int main()
 		delete Lucky;
 		std::cout << std::endl;
 	}
-
+	system("leaks AnimalPlanet");
 	return 0;
 }
 

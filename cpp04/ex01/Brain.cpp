@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:13:25 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 17:17:45 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/13 20:36:18 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ Brain & Brain::operator=(const Brain & other)
 }
 
 // Setter
-void	Brain::setIdea(std::string idea, int index)
+void	Brain::setIdea(std::string idea, int i)
 {
-	this->_idea[index] = idea;
+	this->_idea[i] = idea;
 }
 
 // Getter
-const std::string & Brain::getIdea(int index) const
+const std::string & Brain::getIdea(int i) const
 {
-	return (this->_idea[index]);
+	return (this->_idea[i]);
 }
