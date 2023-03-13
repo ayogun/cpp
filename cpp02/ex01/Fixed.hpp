@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:31:14 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/07 20:17:22 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/13 14:43:54 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,4 @@ class Fixed {
         friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 };
 
-#endif  // FIXED_HPP
+#endif
