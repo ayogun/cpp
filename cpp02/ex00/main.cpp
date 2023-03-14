@@ -6,12 +6,10 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:23:55 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/07 19:57:44 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:42:45 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iostream>
 #include "Fixed.hpp"
 
 int main(void)

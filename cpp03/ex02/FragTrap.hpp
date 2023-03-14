@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:40:08 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 14:46:26 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:49:32 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
+#include <iostream>
 
 class FragTrap : public ClapTrap {
 public:

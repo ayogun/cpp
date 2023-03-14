@@ -6,11 +6,10 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:34:11 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 14:28:01 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:48:18 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 

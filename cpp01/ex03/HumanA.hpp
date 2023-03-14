@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:17:38 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/07 10:32:13 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:36:15 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define HUMANA_HPP
 
 #include <string>
+#include <iostream>
 #include "Weapon.hpp"
 
 class HumanA {

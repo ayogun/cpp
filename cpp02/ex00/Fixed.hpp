@@ -6,12 +6,14 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:24:04 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/07 20:07:13 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:42:08 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
+
+#include <iostream>
 
 class Fixed {
     private:

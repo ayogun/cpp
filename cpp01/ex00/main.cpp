@@ -6,14 +6,10 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 12:08:01 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/06 15:36:01 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:34:40 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
-
-#include <iostream>
 #include "Zombie.hpp"
 
 // Function to test the newZombie() function

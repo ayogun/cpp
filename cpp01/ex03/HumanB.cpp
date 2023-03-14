@@ -6,12 +6,11 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:18:12 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/07 10:32:38 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:36:30 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
-#include <iostream>
 
 HumanB::HumanB(const std::string name) : _name(name), _weapon(nullptr) {
 	return ;

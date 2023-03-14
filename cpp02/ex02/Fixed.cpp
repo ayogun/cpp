@@ -6,12 +6,13 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:31:25 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/08 13:53:02 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:46:05 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+// Static member initialization
 const int Fixed::_fractionalBits = 8;
 
 // Constructor without parameters

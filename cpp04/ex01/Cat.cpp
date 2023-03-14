@@ -6,12 +6,11 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:49:21 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 17:17:49 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:53:25 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
-#include <iostream>
 
 Cat::Cat() : Animal() {
     std::cout << "Cat constructor called" << std::endl;

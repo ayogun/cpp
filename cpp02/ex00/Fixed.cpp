@@ -6,12 +6,11 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:24:12 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/07 20:02:56 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:42:03 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 Fixed::Fixed() : _value(0) {
     std::cout << "Default constructor called" << std::endl; // Print message when default constructor is called

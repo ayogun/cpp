@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:06:40 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/07 13:44:00 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:40:06 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define HARL_HPP
 
 #include <string>
+#include <iostream>
 
 class Harl {
     private:
@@ -21,7 +22,7 @@ class Harl {
         void info(void);
         void warning(void);
         void error(void);
-		void	(Harl::*ptr[5]) ( void ); 
+		void	(Harl::*ptr[5]) ( void );
     
     public:
 		Harl(void);

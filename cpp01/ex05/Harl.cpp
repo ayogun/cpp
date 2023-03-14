@@ -6,12 +6,11 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:34:33 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/07 13:59:32 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:38:38 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-#include <iostream>
 
 Harl::Harl(void)
 {

@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/14 13:47:25 by yogun             #+#    #+#             */
+/*   Updated: 2023/03/14 13:47:27 by yogun            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
-#include <iostream>
 
 // Constructor that initializes the object with the given name and default values for hit points, energy points, and attack damage.
 ClapTrap::ClapTrap(const std::string& name) :

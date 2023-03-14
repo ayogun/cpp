@@ -6,12 +6,11 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:54:59 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 17:17:28 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:52:43 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
-#include <iostream>
 
 WrongAnimal::WrongAnimal() : type_("WrongAnimal") {
     std::cout << "WrongAnimal constructor called" << std::endl;

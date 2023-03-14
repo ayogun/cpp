@@ -6,12 +6,13 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 17:29:00 by yogun             #+#    #+#             */
-/*   Updated: 2023/02/01 23:42:28 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:32:22 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
+// Default Constructor
 Phonebook::Phonebook(void)
 {
 	std::cout << "Welcome to Phonebook"<<std::endl;
@@ -22,10 +23,13 @@ Phonebook::Phonebook(void)
 	return ;
 }
 
+// Destructor 
 Phonebook::~Phonebook(void)
 {
 	return ;
 }
+
+// *****************  Member Functions  *****************
 
 void	Phonebook::add(void)
 {
@@ -71,6 +75,7 @@ void	Phonebook::search(void)
 		std::cout << "Error! ID is not valid.\n";
 }
 
+// This is a helper function to print the contacts
 static void print_contacts(std::string str)
 {
 	int	i;

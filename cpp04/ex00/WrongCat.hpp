@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:55:32 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 17:17:34 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:53:05 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define WRONGCAT_HPP
 
 # include "WrongAnimal.hpp"
+# include <iostream>
 
 class WrongCat : public WrongAnimal {
 public:

@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:55:06 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 17:18:05 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:53:52 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define WRONGANIMAL_HPP
 
 # include <string>
+# include <iostream>
 
 class WrongAnimal {
 public:

@@ -6,11 +6,10 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:31:25 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/12 21:14:17 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:44:04 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cmath>
 #include "Fixed.hpp"
 
 // Default constructor
@@ -49,18 +48,22 @@ Fixed& Fixed::operator=(const Fixed& other) {
     return *this;
 }
 
+// Getter for the fixed point value
 int Fixed::getRawBits(void) const {
     return fixed_point_value;
 }
 
+// Setter for the fixed point value
 void Fixed::setRawBits(int const raw) {
     fixed_point_value = raw;
 }
 
+// Convert the fixed point value to a float
 float Fixed::toFloat(void) const {
     return static_cast<float>(fixed_point_value) / (1 << fractional_bits); // shift right to get the float value from the fixed point value
 }
 
+// Convert the fixed point value to an int
 int Fixed::toInt(void) const {
     return fixed_point_value >> fractional_bits; // shift right to get the int value from the fixed point value
 }

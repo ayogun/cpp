@@ -6,13 +6,13 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:34:33 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/07 14:12:24 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:41:41 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-#include <iostream>
 
+// Default constructor
 Harl::Harl(void)
 {
 	ptr[0] = &Harl::debug;
@@ -22,11 +22,13 @@ Harl::Harl(void)
 	return ;
 }
 
+// Destructor
 Harl::~Harl(void)
 {
 	return ;
 }
 
+// **********************  Member functions  ****************************
 void Harl::debug(void) {
     std::cout << "[ DEBUG]\nI love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger.\nI really do!\n\n";
 }

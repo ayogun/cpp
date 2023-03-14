@@ -6,12 +6,11 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:40:19 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 15:30:50 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:49:27 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
-#include <iostream>
 
 // Default constructor, sets attributes to default values
 FragTrap::FragTrap(void) 

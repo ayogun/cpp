@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:48:11 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 17:17:51 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:53:31 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CAT_HPP
 
 # include "Animal.hpp"
+# include <iostream>
 
 class Cat : public Animal {
     public:

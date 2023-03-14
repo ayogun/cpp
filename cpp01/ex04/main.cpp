@@ -6,14 +6,13 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:26:28 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/07 19:59:17 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:38:18 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 #include <string>
-
 
 /*
 	myReplace function:
@@ -45,6 +44,7 @@ public:
 		return ;
 	}
 
+
 	std::string myReplace(const std::string str, const std::string from, const std::string to) {
     	std::string result;
     	size_t start_pos = 0;
@@ -69,7 +69,8 @@ public:
             std::cerr << "Error: Unable to open input file.\n";
             return;
         }
-
+		
+		// create output file
         std::ofstream outputFile(_filename + ".replace");
         if (!outputFile) {
             std::cerr << "Error: Unable to open output file.\n";

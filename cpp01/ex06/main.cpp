@@ -6,12 +6,11 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:34:13 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/07 11:27:23 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:40:33 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-#include <iostream>
 
 int main(int argc, char **argv)
 {

@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 17:29:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/02/01 23:20:43 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 13:27:41 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Contact::~Contact(void)
 	return ;
 }
 
+// Setter for contact
 void	Contact::set_contact(int id)
 {
 	this->_id = std::to_string(id);
@@ -64,6 +65,7 @@ void	Contact::set_contact(int id)
 	}
 }
 
+// Getters
 std::string	Contact::get_id(void)
 {
 	return(this->_id);
