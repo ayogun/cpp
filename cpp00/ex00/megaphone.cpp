@@ -6,12 +6,15 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 14:27:06 by yogun             #+#    #+#             */
-/*   Updated: 2023/01/27 14:37:39 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/14 12:45:33 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
+/*
+	This program takes a string as an argument and prints it in uppercase letters.
+	If no argument is given, it prints "* LOUD AND UNBEARABLE FEEDBACK NOISE *".
+*/
 int	main(int argc, char **argv)
 {
 	std::string str;
