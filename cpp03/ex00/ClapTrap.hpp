@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:26:50 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 13:47:00 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/15 20:12:40 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class ClapTrap {
     ClapTrap(const ClapTrap& other);
     // Destructor that displays a message to indicate that the object has been destroyed.
     ~ClapTrap();
-
-
-
+	// Copy assignment operator that assigns the values of one object to another.
+	ClapTrap & operator=(const ClapTrap & other);
+	
     // Member function that causes the object to attack the given target, causing damage equal to the object's attack damage. 
     // This function also consumes 1 energy point.
     void attack(const std::string& target);
@@ -37,8 +37,8 @@ class ClapTrap {
     void beRepaired(unsigned int amount);
 
 
-
   private:
+  	ClapTrap(); // Default constructor. It is private because we don't want to allow creating objects without a name.
     std::string name_;
     int hitPoints_;
     int energyPoints_;
