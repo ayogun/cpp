@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:26:50 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 13:48:22 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/15 21:50:14 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class ClapTrap {
     ClapTrap(const ClapTrap& other);
     // Destructor that displays a message to indicate that the object has been destroyed.
     ~ClapTrap();
+
+	// Copy assignment operator that assigns the values of one object to another.
+	ClapTrap & operator=(const ClapTrap & other);
 
     // Member function that causes the object to attack the given target, causing damage equal to the object's attack damage. 
     // This function also consumes 1 energy point.
@@ -50,12 +53,12 @@ class ClapTrap {
 
   private:
     std::string name_;
-    int hitPoints_;
-    int energyPoints_;
-    int attackDamage_;
+    unsigned int hitPoints_;
+    unsigned int energyPoints_;
+    unsigned int attackDamage_;
 
 	protected:
-		ClapTrap(void); // Default constructor. It is protected because we don't want to create a ClapTrap without a name. This means that it can only be accessed by the class itself and its derived classes, but not by other classes or functions outside of the class hierarchy. For example, the ClapTrap constructor that takes a name parameter is used to set the name member variable, which is required for the ClapTrap object to function correctly. By making the default constructor protected, the class designer can ensure that all ClapTrap objects are initialized with a valid name.
+		ClapTrap(void); // Default constructor. It is protected because we don't want to allow creating objects without a name in outside of the class.
 };
 
 #endif

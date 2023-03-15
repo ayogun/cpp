@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:26:50 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/15 20:12:40 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/15 21:50:31 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ class ClapTrap {
   private:
   	ClapTrap(); // Default constructor. It is private because we don't want to allow creating objects without a name.
     std::string name_;
-    int hitPoints_;
-    int energyPoints_;
-    int attackDamage_;
+    unsigned int hitPoints_;
+    unsigned int energyPoints_;
+    unsigned int attackDamage_;
 };
 
 #endif

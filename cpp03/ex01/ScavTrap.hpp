@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:30:27 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 14:43:35 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/15 21:03:05 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ public:
     ScavTrap(const std::string name); // Constructor
     ScavTrap(const ScavTrap& other); // Copy constructor
     ~ScavTrap(void); // Destructor
+
+	ScavTrap & operator=(const ScavTrap & other); // Copy assignment operator
 
     // Override attack function to add ScavTrap specific message
     void attack(const std::string& target);

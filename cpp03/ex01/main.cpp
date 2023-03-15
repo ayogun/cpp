@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:34:11 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 13:48:18 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/15 21:31:47 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main() {
     claptrap.attack("a bandit");
     claptrap.takeDamage(15);
     claptrap.beRepaired(10);
+	
     std::cout << std::endl;
 
     std::cout << "Creating a ScavTrap" << std::endl;
@@ -27,8 +28,8 @@ int main() {
     scavtrap.takeDamage(20);
     scavtrap.beRepaired(5);
     scavtrap.guardGate();
+	
     std::cout << std::endl;
 
-    std::cout << "Destroying the ScavTrap and then the ClapTrap" << std::endl;
     return 0;
 }
