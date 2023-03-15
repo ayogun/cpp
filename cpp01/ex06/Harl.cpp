@@ -54,9 +54,9 @@ void Harl::complain(std::string level) {
     }
     
     if (i < 4) {
-		while(i > -1){
+		while(i > 4){
 			(this->*ptr[i])();
-			i--;
+			i++;
 		}
     } else {
         std::cout << "Invalid level!\n";
