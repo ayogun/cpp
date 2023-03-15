@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:23:55 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 13:42:45 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/15 14:51:28 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ int main(void)
     Fixed b(a); // Create a copy of fixed-point number a
     Fixed c; // Create a default fixed-point number with value 0
 
+	std::cout << std::endl;
+
     c = b; // Assign fixed-point number b to fixed-point number c
+
+	std::cout << std::endl;
 
     std::cout << a.getRawBits() << std::endl; // Print the raw value of fixed-point number a
     std::cout << b.getRawBits() << std::endl; // Print the raw value of fixed-point number b

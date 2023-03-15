@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:31:14 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 13:44:08 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/15 15:14:06 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 class Fixed {
     private:
-        int fixed_point_value;
-        static const int fractional_bits = 8;
+        int _rawBits;
+        static const int _fractionalBits = 8;
     public:
         Fixed();  // default constructor
         Fixed(const int value);  // constructor with int parameter
@@ -34,8 +34,9 @@ class Fixed {
         float toFloat(void) const;
         int toInt(void) const;
 
-        // overload the insertion operator to output a float representation of the fixed point number
-        friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 };
+
+        // overload the insertion operator to output a float representation of the fixed point number. It is a non-member function.
+        std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif

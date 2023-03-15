@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:31:25 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 13:44:04 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/15 15:07:30 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 // Default constructor
 Fixed::Fixed() {
     std::cout << "Default constructor called" << std::endl;
-    fixed_point_value = 0;
+    _rawBits = 0;
 }
 
 // Constructor with int parameter
 Fixed::Fixed(const int value) {
     std::cout << "Int constructor called" << std::endl;
-    fixed_point_value = value << fractional_bits; // shift left to get the fixed point value
+    _rawBits = value << _fractionalBits; // shift left to get the fixed point value
 }
 
 // Constructor with float parameter
 Fixed::Fixed(const float value) {
     std::cout << "Float constructor called" << std::endl;
-    fixed_point_value = roundf(value * (1 << fractional_bits)); // shift left to get the fixed point value and round it to the nearest integer value using roundf from cmath library 
+    _rawBits = roundf(value * (1 << _fractionalBits)); // shift left to get the fixed point value and round it to the nearest integer value using roundf from cmath library 
 }
 
 // Destructor
@@ -38,34 +38,34 @@ Fixed::~Fixed() {
 // Copy constructor
 Fixed::Fixed(const Fixed& other) {
     std::cout << "Copy constructor called" << std::endl;
-    fixed_point_value = other.fixed_point_value;
+    _rawBits = other._rawBits;
 }
 
 // Assignment operator
 Fixed& Fixed::operator=(const Fixed& other) {
     std::cout << "Copy assignment operator called" << std::endl;
-    fixed_point_value = other.fixed_point_value;
+    _rawBits = other._rawBits;
     return *this;
 }
 
 // Getter for the fixed point value
 int Fixed::getRawBits(void) const {
-    return fixed_point_value;
+    return _rawBits;
 }
 
 // Setter for the fixed point value
 void Fixed::setRawBits(int const raw) {
-    fixed_point_value = raw;
+    _rawBits = raw;
 }
 
 // Convert the fixed point value to a float
 float Fixed::toFloat(void) const {
-    return static_cast<float>(fixed_point_value) / (1 << fractional_bits); // shift right to get the float value from the fixed point value
+    return static_cast<float>(_rawBits) / (1 << _fractionalBits); // shift right to get the float value from the fixed point value
 }
 
 // Convert the fixed point value to an int
 int Fixed::toInt(void) const {
-    return fixed_point_value >> fractional_bits; // shift right to get the int value from the fixed point value
+    return _rawBits >> _fractionalBits; // shift right to get the int value from the fixed point value
 }
 
 // overload the insertion operator to output a float representation of the fixed point number to the console using the toFloat() method

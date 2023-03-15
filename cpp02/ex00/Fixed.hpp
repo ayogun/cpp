@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:24:04 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 13:42:08 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/15 14:17:46 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Fixed {
     private:
-        int _value; // Integer to store the fixed-point number value
+        int _rawBits; // Integer to store the fixed-point number value
         static const int _fractionalBits = 8; // Static constant integer to store the number of fractional bits
 		
     public:
