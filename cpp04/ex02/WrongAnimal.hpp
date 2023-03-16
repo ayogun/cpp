@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:55:06 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 13:54:37 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/16 15:37:44 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@
 
 class WrongAnimal {
 public:
-    WrongAnimal();
-    WrongAnimal(const std::string& type);
-    WrongAnimal(const WrongAnimal& other);
-    virtual ~WrongAnimal();
+    WrongAnimal(void); // default constructor
+    WrongAnimal(const std::string& type); // constructor
+    WrongAnimal(const WrongAnimal& other); // copy constructor
+    virtual ~WrongAnimal(void); // destructor
 
-    WrongAnimal& operator=(const WrongAnimal& other);
+    WrongAnimal& operator=(const WrongAnimal& other); // assiging operator
 
+    // Mmember functions
     virtual void makeSound() const;
     std::string getType() const;
 

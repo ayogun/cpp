@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:47:19 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/16 15:24:50 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/16 16:43:54 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 class Animal {
 public:
-    Animal(void);   // default constructor
-    Animal(const std::string& type); // constructor
-    Animal(const Animal& other);   // copy constructor
-    virtual ~Animal(); // destructor
+    Animal(void);                       // default constructor
+    Animal(const std::string& type);    // constructor
+    Animal(const Animal& other);        // copy constructor
+    virtual ~Animal(void);              // destructor
 
     Animal& operator=(const Animal& other); // assiging operator
 
@@ -30,7 +30,6 @@ public:
 
 protected:
     std::string _type;
-    Brain* _brain;
 };
 
 #endif
