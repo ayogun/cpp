@@ -6,13 +6,13 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:48:02 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 13:52:06 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/16 14:22:26 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog") {
+Dog::Dog(void) : Animal("Dog") {
     std::cout << "Dog constructor called" << std::endl;
 }
 

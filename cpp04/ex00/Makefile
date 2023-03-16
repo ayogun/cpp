@@ -6,7 +6,7 @@
 #    By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 14:30:54 by yogun             #+#    #+#              #
-#    Updated: 2023/03/13 17:17:26 by yogun            ###   ########.fr        #
+#    Updated: 2023/03/16 15:21:04 by yogun            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = AnimalPlanet
 
 # Set the source files to compile
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 # Generate a list of object files from the source files
 OBJ = $(SRC:.cpp=.o)

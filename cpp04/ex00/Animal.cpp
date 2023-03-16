@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:47:37 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 13:51:05 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/16 14:20:00 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ Animal& Animal::operator=(const Animal& other) {
     }
     return *this;
 }
-
 
 void Animal::makeSound() const {
     std::cout << "An animal makes a sound" << std::endl;

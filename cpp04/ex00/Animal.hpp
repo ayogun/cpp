@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   animal.hpp                                         :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:47:19 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 13:50:12 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/16 14:19:23 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 class Animal {
 public:
-    Animal(void);
-    Animal(const std::string& type);
-    Animal(const Animal& other);
-    virtual ~Animal();
+    Animal(void);   // default constructor
+    Animal(const std::string& type); // constructor
+    Animal(const Animal& other);   // copy constructor
+    virtual ~Animal(); // destructor
 
-    Animal& operator=(const Animal& other);
+    Animal& operator=(const Animal& other); // assiging operator
 
     virtual void makeSound() const;
     std::string getType() const;
