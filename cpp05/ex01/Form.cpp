@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:56:06 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/16 17:46:55 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/16 18:22:28 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int Form::getExecuteGrade() const {
 
 // sign method that takes a bureaucrat object and signs the form if grade is high enough
 void Form::beSigned(const Bureaucrat& bureaucrat) {
-    if (bureaucrat.getGrade() <= _signGrade) {
+    if (bureaucrat.getGrade() <= _signGrade && !_isSigned) {
         std::cout << "Form " << _name << " signed by " << bureaucrat.getName() << std::endl;
         _isSigned = true;
     }
