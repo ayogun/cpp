@@ -6,25 +6,23 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:55:35 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 23:36:21 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/16 17:31:06 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 
-#include <string>
-#include <iostream>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
 class Form {
 public:
-    Form(); // default constructor
+    Form(void); // default constructor
     Form(const std::string& name, int sign, int execute); // parameterized constructor
     Form(const Form& other); // copy constructor
-    virtual ~Form(); // virtual destructor
+    virtual ~Form(void); // virtual destructor
 
     Form& operator=(const Form& other); // assignment operator overload
 

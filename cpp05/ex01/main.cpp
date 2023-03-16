@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:47:44 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 23:45:03 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/16 17:55:09 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,17 @@ int main()
 	{
 		try
 		{
-			Form		SampleForm("SampleForm", 0, 10);
-			Form		SampleForm2("SampleForm2", 1, 151);
+			Form		SampleForm("SampleForm", 0, 10); std::cout << std::endl;
+			//Form		SampleForm2("SampleForm2", 1, 151); std::cout << std::endl;
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << '\n';
 		}
 	}
+
+	std::cout << std::endl; std::cout << "______________________________________________________" << std::endl; std::cout << std::endl;
+	
 	{
 		try
 		{
@@ -41,6 +44,9 @@ int main()
 			std::cerr << e.what() << '\n';
 		}
 	}
+
+	std::cout << std::endl; std::cout << "______________________________________________________" << std::endl; std::cout << std::endl;
+	
 	{
 		try
 		{
@@ -57,6 +63,9 @@ int main()
 			std::cerr << e.what() << '\n';
 		}
 	}
+
+	std::cout << std::endl; std::cout << "______________________________________________________" << std::endl; std::cout << std::endl;
+
 	{
 		try
 		{

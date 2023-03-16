@@ -6,15 +6,19 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:56:06 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 23:31:44 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/16 17:46:55 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 // default constructor
-Form::Form() : _name("Default Form"), _isSigned(false), _signGrade(150), _executeGrade(150) {
-	
+Form::Form(void) : 
+    _name("Default Form"), 
+    _isSigned(false), 
+    _signGrade(150), 
+    _executeGrade(150) {
+	std::cout << "Form default constructor called" << std::endl;
 }
 
 // parameterized constructor
@@ -25,18 +29,25 @@ Form::Form(const std::string& name, int sign, int execute)
         throw GradeTooHighException();
     else if (sign > 150 || execute > 150)
         throw GradeTooLowException();
+    else
+        std::cout << "Form " << name << " constructed with constructer with " << sign << " sign grade and " << execute << " execute grade" << std::endl;
 }
 
 // copy constructor
 Form::Form(const Form& other)
     : _name(other.getName()), _isSigned(other.getIsSigned()), 
-    _signGrade(other.getSignGrade()), _executeGrade(other.getExecuteGrade()) {}
+    _signGrade(other.getSignGrade()), _executeGrade(other.getExecuteGrade()) {
+    std::cout << "Form copy constructor called" << std::endl;
+    }
 
 // destructor
-Form::~Form() {}
+Form::~Form(void) {
+    std::cout << "Form destructor called" << std::endl;
+}
 
 // assignment operator overload
 Form& Form::operator=(const Form& other) {
+    std::cout << "Form assignation operator called" << std::endl;
     if (this != &other) {
         _isSigned = other._isSigned;
     }
@@ -63,6 +74,7 @@ int Form::getExecuteGrade() const {
 // sign method that takes a bureaucrat object and signs the form if grade is high enough
 void Form::beSigned(const Bureaucrat& bureaucrat) {
     if (bureaucrat.getGrade() <= _signGrade) {
+        std::cout << "Form " << _name << " signed by " << bureaucrat.getName() << std::endl;
         _isSigned = true;
     }
     else {
@@ -72,15 +84,15 @@ void Form::beSigned(const Bureaucrat& bureaucrat) {
 
 // overloaded operator for printing form details
 std::ostream& operator<<(std::ostream& os, const Form& form) {
-os << "Form name: " << form.getName() << std::endl;
-os << "Sign grade required: " << form.getSignGrade() << std::endl;
-os << "Execute grade required: " << form.getExecuteGrade() << std::endl;
-os << "Is signed: ";
-if (form.getIsSigned()) {
-os << "yes" << std::endl;
-}
-else {
-os << "no" << std::endl;
-}
-return os;
+    os << "Form name: " << form.getName() << std::endl;
+    os << "Sign grade required: " << form.getSignGrade() << std::endl;
+    os << "Execute grade required: " << form.getExecuteGrade() << std::endl;
+    os << "Is signed: ";
+    if (form.getIsSigned()) {
+        os << "yes" << std::endl;
+    }
+    else {
+        os << "no" << std::endl;
+    }
+    return os;
 }
