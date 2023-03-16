@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:13:14 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/13 17:17:47 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/16 15:39:54 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 class Brain {
 public:
-    Brain();
+    Brain(void);
     Brain(const Brain& other);
-    virtual ~Brain();
+    virtual ~Brain(void);
 
     Brain& operator=(const Brain& other);
 

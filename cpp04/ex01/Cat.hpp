@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:48:11 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 13:53:31 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/16 15:29:56 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Cat : public Animal {
     public:
         Cat(void );
         Cat(const Cat& other);
-        virtual ~Cat();
+        virtual ~Cat(void);
 
         Cat& operator=(const Cat& other);
 
