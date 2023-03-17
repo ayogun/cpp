@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:56:06 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/16 18:22:28 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/17 17:49:38 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 Form::Form(void) : 
     _name("Default Form"), 
     _isSigned(false), 
-    _signGrade(150), 
-    _executeGrade(150) {
+    _signGrade(75), 
+    _executeGrade(75) {
 	std::cout << "Form default constructor called" << std::endl;
 }
 
