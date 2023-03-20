@@ -19,10 +19,9 @@
 
 class Bureaucrat; // forward declaration
 
-
 class AForm {
 public:
-    AForm(); // default constructor
+    AForm(void); // default constructor
     AForm(const std::string& name, int sign, int execute); // parameterized constructor
     AForm(const AForm& other); // copy constructor
     virtual ~AForm(); // virtual destructor
@@ -45,14 +44,24 @@ public:
         }
     };
 
-			class GradeNotSignedException : public std::exception {
-			public:
-				// what() method that returns a const char* with the error message
-				virtual const char *what() const throw()
-				{
-					return ("Form is not signed!");
-				}
-		};
+	class GradeNotSignedException : public std::exception {
+	public:
+		// what() method that returns a const char* with the error message
+		virtual const char *what() const throw()
+		{
+			return ("Form is not signed!");
+		}
+	};
+
+	class GradeTooLowToExecuteException : public std::exception {
+	public:
+		// what() method that returns a const char* with the error message
+		virtual const char *what() const throw()
+		{
+			return ("Grade is too low to execute!");
+		}
+	};
+	
 
     // getter methods
     std::string getName() const;

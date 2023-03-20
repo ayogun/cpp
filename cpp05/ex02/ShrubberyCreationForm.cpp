@@ -6,20 +6,20 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:03:59 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 00:56:04 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/20 23:30:20 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 // Default constructor
-ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationForm", 25, 5), _target("nothing")
+ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationForm", 145, 137), _target("nothing")
 {
 	// std::cout << "ShrubberyCreationForm Default Constructor called" << std::endl;
 }
 
 // Constructor
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 25, 5), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
 	// std::cout << "ShrubberyCreationForm Constructor called" << std::endl;
 }

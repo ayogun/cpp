@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:45:59 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/16 17:40:26 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/20 23:05:28 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ public:
     void signForm(Form& form);
 
 private:
-    std::string _name;
+    const std::string _name;
     int _grade;
 };
 

@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:45:59 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 00:40:22 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/20 23:22:36 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ public:
     public:
         virtual const char* what() const throw();
     };
-
+	
+	Bureaucrat(void);
     Bureaucrat(const std::string& name, int grade);
     Bureaucrat(const Bureaucrat& other);
-    ~Bureaucrat();
+    ~Bureaucrat(void);
 
     Bureaucrat& operator=(const Bureaucrat& other);
 
@@ -48,7 +49,7 @@ public:
 
 
 private:
-    std::string _name;
+    const std::string _name;
     int _grade;
 };
 

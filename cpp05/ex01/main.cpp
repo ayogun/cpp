@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:47:44 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/16 17:55:09 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/20 22:29:36 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ int main()
 	{
 		try
 		{
-			Bureaucrat	Student("First Year Student", 150);
+			//Bureaucrat	Student("First Year Student", 150);
 			Form		Graduate("Graduation", 1, 10);
 
 			std::cout << Graduate;
-			std::cout << Student;
-			Student.signForm(Graduate);
+			//std::cout << Student;
+			//Student.signForm(Graduate);
 		}
 		catch(const std::exception& e)
 		{

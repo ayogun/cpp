@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:04:15 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 00:52:28 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/20 23:29:15 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ bool	RobotomyRequestForm:: execute(Bureaucrat const & executor) const
 	else
 	{
 		std::cout << "RobotomyRequestForm: * Some drilling noises... *   ";
-		if (std::rand() % 2 == 0)
+		if (std::rand() % 2 == 0) // 50% chance
 			std::cout << this->getTarget() << " has been robotomized successfully!" << std::endl;
 		else
 			std::cout << "Lucky " << this->getTarget() << "! Robotomy was failed..." << std::endl;

@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:47:04 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 00:40:55 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/20 23:15:31 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other)
     *this = other;
 }
 
-Bureaucrat::~Bureaucrat()
+Bureaucrat::~Bureaucrat(void)
 {
+	return;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)

@@ -13,7 +13,7 @@
 #include "AForm.hpp"
 
 // default constructor
-AForm::AForm() : _name("Default AForm"), _isSigned(false), _signGrade(150), _executeGrade(150) {
+AForm::AForm() : _name("Default AForm"), _isSigned(false), _signGrade(1), _executeGrade(1) {
 	return ;
 }
 
@@ -23,19 +23,27 @@ AForm::AForm(const std::string& name, int sign, int execute)
     // check if grades are valid. If not, throw exception. 
     if (sign < 1 || execute < 1)
         throw GradeTooHighException();
-    else if (sign > 150 || execute > 150)
+    else if (sign > 150)
         throw GradeTooLowException();
+	else if (execute > 150)
+		throw GradeTooLowException();
+	else
+		std::cout << "AForm " << name << " created" << std::endl;
+	return ;
 }
 
 // copy constructor
 AForm::AForm(const AForm& other)
-    : _name(other.getName()), _isSigned(other.getIsSigned()), 
-    _signGrade(other.getSignGrade()), _executeGrade(other.getExecuteGrade()) {
+    : _name(other.getName()),
+	_isSigned(other.getIsSigned()), 
+    _signGrade(other.getSignGrade()),
+	_executeGrade(other.getExecuteGrade()) 
+	{
 		return ;
 	}
 
 // destructor
-AForm::~AForm() {
+AForm::~AForm(void) {
 	return ;
 }
 
