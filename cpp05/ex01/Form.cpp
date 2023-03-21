@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:56:06 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/17 17:49:38 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/21 18:39:23 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,12 @@ std::ostream& operator<<(std::ostream& os, const Form& form) {
         os << "no" << std::endl;
     }
     return os;
+}
+
+char const* Form::GradeTooHighException::what() const throw() {
+	return "Grade is too high!";
+}
+
+char const* Form::GradeTooLowException::what() const throw() {
+	return "Grade is too low!";
 }

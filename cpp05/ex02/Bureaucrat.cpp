@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:47:04 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/20 23:15:31 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/21 19:54:13 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,11 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
     return "Bureaucrat grade is too low!";
 }
 
+const char *Bureaucrat::GradeTooLowToExecuteException::what() const throw()
+{
+	return "Bureaucrat grade is too low to execute the form!";
+}
+
 void	Bureaucrat::signForm(AForm & i)
 {
 	try // try to sign the form
@@ -100,7 +105,9 @@ void	Bureaucrat::signForm(AForm & i)
 void	Bureaucrat::executeForm(AForm const & form)
 {
 	if (form.execute(*this) == false)
-		throw GradeTooLowException();
+	{
+			throw GradeTooLowToExecuteException();
+	}
 	else
 		std::cout << this->getName() << " executed " << form.getName() << ".\n";
 }

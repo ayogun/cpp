@@ -17,7 +17,7 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 
-class Bureaucrat; // forward declaration
+class Bureaucrat;
 
 class AForm {
 public:
@@ -32,36 +32,20 @@ public:
     class GradeTooHighException : public std::exception {
     public:
 		// what() method that returns a const char* with the error message
-        virtual const char* what() const throw() { 
-            return "Grade is too high!";
-        }
+        virtual const char* what() const throw();
     };
+	
     class GradeTooLowException : public std::exception {
     public:
 		// what() method that returns a const char* with the error message
-        virtual const char* what() const throw() {
-            return "Grade is too low!";
-        }
+        virtual const char* what() const throw();
     };
 
-	class GradeNotSignedException : public std::exception {
+	class FormNotSignedException : public std::exception
+	{
 	public:
-		// what() method that returns a const char* with the error message
-		virtual const char *what() const throw()
-		{
-			return ("Form is not signed!");
-		}
+		virtual const char *what() const throw();
 	};
-
-	class GradeTooLowToExecuteException : public std::exception {
-	public:
-		// what() method that returns a const char* with the error message
-		virtual const char *what() const throw()
-		{
-			return ("Grade is too low to execute!");
-		}
-	};
-	
 
     // getter methods
     std::string getName() const;

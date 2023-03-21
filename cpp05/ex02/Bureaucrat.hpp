@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:45:59 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/20 23:22:36 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/21 18:38:28 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ public:
     public:
         virtual const char* what() const throw();
     };
+
+	class GradeTooLowToExecuteException : public std::exception {
+	public:
+		// what() method that returns a const char* with the error message
+		virtual const char *what() const throw();
+	};
 	
 	Bureaucrat(void);
     Bureaucrat(const std::string& name, int grade);

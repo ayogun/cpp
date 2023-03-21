@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:04:15 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/20 23:29:15 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/21 19:59:45 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,16 @@ std::string	RobotomyRequestForm::getTarget(void) const
 bool	RobotomyRequestForm:: execute(Bureaucrat const & executor) const
 {
 	if (this->getIsSigned() == false)
-		throw GradeNotSignedException();
+		throw FormNotSignedException();
 	else if (executor.getGrade() > this->getExecuteGrade())
-		throw GradeTooLowException();
+		return (false);
 	else
 	{
 		std::cout << "RobotomyRequestForm: * Some drilling noises... *   ";
 		if (std::rand() % 2 == 0) // 50% chance
-			std::cout << this->getTarget() << " has been robotomized successfully!" << std::endl;
+			std::cout << "Lucky " << this->getTarget() << " has been robotomized successfully!" << std::endl;
 		else
-			std::cout << "Lucky " << this->getTarget() << "! Robotomy was failed..." << std::endl;
+			std::cout << "Unlucky " << this->getTarget() << "! Robotomy was failed..." << std::endl;
 	}
 	return(true);
 }

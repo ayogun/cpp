@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:47:44 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 00:58:09 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/21 20:01:14 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,81 +17,102 @@
 
 int main()
 {
-	{
+	
 		try
 		{
 			Bureaucrat					Student("Last Year Student", 1);
-			PresidentialPardonForm		p_form("Cat");
-			RobotomyRequestForm			r_form("Dog");
-			ShrubberyCreationForm		s_form("Diamond");
+			PresidentialPardonForm		pre_form("Presidential");
+			RobotomyRequestForm			rob_form("robotomy");
+			ShrubberyCreationForm		shr_form("Shrubbery");
 
-			std::cout << p_form;
-			std::cout << r_form;
-			std::cout << s_form;
-			std::cout << Student;
+			std::cout<< std::endl << "______________________________________________________" << std::endl << std::endl;
 
-			Student.signForm(p_form);
-			Student.executeForm(p_form);
+			std::cout << pre_form << std::endl;
+			std::cout << rob_form << std::endl;
+			std::cout << shr_form << std::endl;
+			std::cout << Student << std::endl;
 
-			Student.signForm(r_form);
-			Student.executeForm(r_form);
+			std::cout<< std::endl << "______________________________________________________" << std::endl << std::endl;
 
-			Student.signForm(s_form);
-			Student.executeForm(s_form);
+			Student.signForm(pre_form);
+			Student.executeForm(pre_form);
+
+			Student.signForm(rob_form);
+			Student.executeForm(rob_form);
+
+			Student.signForm(shr_form);
+			Student.executeForm(shr_form);
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << '\n';
 		}
-	}
-	{
-		try
-		{
-			Bureaucrat					Student("Last Year Student", 1);
-			PresidentialPardonForm		p_form("Cat");
+	
 
-			std::cout << p_form;
-			std::cout << Student;
+	// std::cout << std::endl << "__________________________________________________________________" << std::endl << std::endl;
+	
+	// {
+	// 	try
+	// 	{
+	// 		Bureaucrat					Student("Last Year Student", 1);
+	// 		PresidentialPardonForm		pre_form("Presidential");
 
-			Student.executeForm(p_form);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-	}
-	{
-		try
-		{
-			Bureaucrat					Student("First Year Student", 150);
-			RobotomyRequestForm			r_form("Dog");
+	// 		std::cout << pre_form;
+	// 		std::cout << Student;
 
-			std::cout << r_form;
-			std::cout << Student;
+	// 		std::cout << std::endl;
 
-			Student.signForm(r_form);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-	}
-	{
-		try
-		{
-			Bureaucrat					Student("Second Year Student", 72);
-			RobotomyRequestForm			r_form("Dog");
+	// 		Student.executeForm(pre_form);
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
+	// }
 
-			std::cout << r_form;
-			std::cout << Student;
+	// std::cout << std::endl << "__________________________________________________________________" << std::endl << std::endl;
+	
+	// {
+	// 	try
+	// 	{
+	// 		Bureaucrat					Student("First Year Student", 150);
+	// 		RobotomyRequestForm			rob_form("Robotomy");
 
-			Student.signForm(r_form);
-			Student.executeForm(r_form);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-	}
+	// 		std::cout << rob_form;
+	// 		std::cout << Student;
+
+	// 		std::cout << std::endl;
+
+	// 		Student.signForm(rob_form);
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
+	// }
+
+	// std::cout << std::endl << "__________________________________________________________________" << std::endl << std::endl;
+
+	// {
+	// 	try
+	// 	{
+	// 		Bureaucrat					Student("Second Year Student", 72);
+	// 		RobotomyRequestForm			rob_form("Robotomy");
+
+	// 		std::cout << rob_form;
+	// 		std::cout << Student;
+
+	// 		std::cout << std::endl;
+
+	// 		Student.signForm(rob_form);
+			
+	// 		//std::cout << "calistim" << std::endl;
+	// 		Student.executeForm(rob_form);
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
+	// }
 	return (0);
 }

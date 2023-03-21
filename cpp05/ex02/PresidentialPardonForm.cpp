@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:07:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 00:51:24 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/21 19:58:06 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ std::string	PresidentialPardonForm::getTarget(void) const
 bool	PresidentialPardonForm:: execute(Bureaucrat const & executor) const
 {
 	if (this->getIsSigned() == false)
-		throw GradeNotSignedException();
+		throw FormNotSignedException();
 	else if (executor.getGrade() > this->getExecuteGrade())
-		throw GradeTooLowException();
+		return (false);
 	else
 		std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox!" << std::endl;
 	return(true);

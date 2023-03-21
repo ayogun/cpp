@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:03:59 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/20 23:30:20 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/21 19:53:57 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,9 @@ void	drawDiamond(std::string name)
 bool	ShrubberyCreationForm:: execute(Bureaucrat const & executor) const
 {
 	if (this->getIsSigned() == false)
-		throw GradeNotSignedException();
+		throw FormNotSignedException();
 	else if (executor.getGrade() > this->getExecuteGrade())
-		throw GradeTooLowException();
+		return (false);
 	else
 		drawDiamond(this->getTarget());
 	return(true);

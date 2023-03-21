@@ -98,3 +98,15 @@ os << "no" << std::endl;
 }
 return os;
 }
+
+const char* AForm::GradeTooLowException::what() const throw() {
+	return "Grade is too low!";
+}
+
+const char* AForm::GradeTooHighException::what() const throw() {
+	return "Grade is too high!";
+}
+
+const char* AForm::FormNotSignedException::what() const throw() {
+	return "Form is not signed!";
+}

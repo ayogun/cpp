@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:55:35 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/17 17:52:40 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/21 18:39:30 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,11 @@ public:
     // exceptions for grades that are too high or low
     class GradeTooHighException : public std::exception {
     public:
-        virtual const char* what() const throw() {
-            return "Grade is too high!";
-        }
+        virtual const char* what() const throw();
     };
     class GradeTooLowException : public std::exception {
     public:
-        virtual const char* what() const throw() {
-            return "Grade is too low!";
-        }
+        virtual const char* what() const throw();
     };
 
     // getter methods
