@@ -6,7 +6,7 @@
 #    By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 14:30:54 by yogun             #+#    #+#              #
-#    Updated: 2023/03/14 01:32:40 by yogun            ###   ########.fr        #
+#    Updated: 2023/03/21 21:59:44 by yogun            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = convert
 
 # Set the source files to compile
-SRC = main.cpp Conversion.cpp
+SRC = main.cpp ScalarConverter.cpp
 
 # Generate a list of object files from the source files
 OBJ = $(SRC:.cpp=.o)
