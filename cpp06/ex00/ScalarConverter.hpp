@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/22 15:34:39 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/22 19:04:45 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
 
-# define STRING	    0
-# define FLOAT	    1
-# define CHAR  	    2
-# define INT   	    3
-# define DOUBLE		4
+# define INT   	    0
+# define CHAR  	    1
+# define FLOAT	    2
+# define DOUBLE		3
+# define STRING	    4
 
 # include <iostream>
 
@@ -51,21 +51,23 @@ class Converter {
 		
 		/*****************************************************************************************/
 
+		bool					NanMessage( void ) const;	// Pint out Nan message
+		char					toChar(void) const;			// convert to char
+		float					toFloat(void) const;		// convert to float
+		int						toInt(void) const;			// convert to int
+		double					toDouble(void) const;		// convert to double
+
 		// getters
-		std::string				getValue(void) const;
-		int						getType(void) const;
-		char					toChar(void) const;
-		int						toInt(void) const;
-		float					toFloat(void) const;
-		double					toDouble(void) const;
+		int						getType(void) const;		// get the type of the value
+		std::string				getValue(void) const;		// get the value
 
 		
-		bool					NanMessage( void ) const;
+		
 
 	private:
-		std::string		_value;
-		int				_type;
-		void			setType(void);
+		std::string		_value;			// value to convert, in other words it will be sent by user
+		void			setType(void);	// set the type of the value
+		int				_type; 			// 0 = int, 1 = char, 2 = float, 3 = double, 4 = string
 };
 
 #endif

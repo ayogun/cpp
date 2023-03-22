@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:17 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/22 15:34:39 by yogun            ###   ########.fr       */
+/*   Updated: 2023/03/22 19:08:12 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,40 @@ Converter & Converter::operator=(const Converter & other)
 
 /**********************   MEMBER FUNCTIONS    *********************/
 
+int	Converter::getType( void ) const
+{
+	return (this->_type);
+}
+
+std::string	Converter::getValue( void ) const
+{
+	return (this->_value);
+}
+
+int	Converter::toInt( void ) const
+{
+	int	i;
+
+	switch (this->getType())
+	{
+		case CHAR:
+			i = static_cast<int>(this->getValue()[0]); // char to int
+			break;
+		case STRING:			// if the input is string, we can't convert it to int
+			throw ConverterImpossible();
+		default:
+			try
+			{
+				i = std::stoi(this->getValue()); // string to int
+			}
+			catch(const std::exception& e)
+			{
+				throw ConverterImpossible();
+			}
+	}
+	return (i);
+}
+
 char	Converter::toChar( void ) const
 {
 	int			i;
@@ -105,28 +139,28 @@ char	Converter::toChar( void ) const
 	return (i);
 }
 
-int	Converter::toInt( void ) const
+double	Converter::toDouble( void ) const
 {
-	int	i;
+	double d;
 
 	switch (this->getType())
 	{
 		case CHAR:
-			i = static_cast<int>(this->getValue()[0]); // char to int
+			d = static_cast<float>(this->getValue()[0]);
 			break;
-		case STRING:			// if the input is string, we can't convert it to int
+		case STRING:
 			throw ConverterImpossible();
 		default:
 			try
 			{
-				i = std::stoi(this->getValue()); // string to int
+				d = std::stod(this->getValue());
 			}
 			catch(const std::exception& e)
 			{
 				throw ConverterImpossible();
 			}
 	}
-	return (i);
+	return (d);
 }
 
 float	Converter::toFloat( void ) const
@@ -151,30 +185,6 @@ float	Converter::toFloat( void ) const
 			}
 	}
 	return (f);
-}
-
-double	Converter::toDouble( void ) const
-{
-	double d;
-
-	switch (this->getType())
-	{
-		case CHAR:
-			d = static_cast<float>(this->getValue()[0]);
-			break;
-		case STRING:
-			throw ConverterImpossible();
-		default:
-			try
-			{
-				d = std::stod(this->getValue());
-			}
-			catch(const std::exception& e)
-			{
-				throw ConverterImpossible();
-			}
-	}
-	return (d);
 }
 
 bool	Converter::NanMessage( void ) const
@@ -219,18 +229,24 @@ void	Converter::setType(void)
 	// If the string is finished, it can be an int
 	if (!this->getValue()[i])
 		this->_type = INT;
+
+	// If the upcoming value is dot, it can be eaither float or double. If it's not, it's a string
 	else if (this->getValue()[i] == '.')
 	{
 		i++;
 		while (this->getValue()[i] && this->getValue()[i] == '0')
 			i++;
-		if (!this->getValue()[i] || (this->getValue()[i] == 'f' && !this->getValue()[i + 1]))
+		if (!this->getValue()[i] || (this->getValue()[i] == 'f' && !this->getValue()[i + 1])) // If the string is finished or the next value is f, it will be int. Because 0.0f is 0 int.
 		{
 			this->_type = INT;
 			return ;
-		}
+		}		
+
+		// As long as there is a digit, we iterate
 		while (this->getValue()[i] && isdigit(this->getValue()[i]) != 0)
 			i++;
+
+		// If the string is finished, it can be a float or a double. If the next value is f, it will be float. If not, it will be double. If both cases are wrong, it's a string
 		if (this->getValue()[i] == 'f' && !this->getValue()[i + 1])
 			this->_type = FLOAT;
 		else if(!this->getValue()[i])
@@ -240,14 +256,4 @@ void	Converter::setType(void)
 	}
 	else
 		this->_type = STRING;
-}
-
-std::string	Converter::getValue( void ) const
-{
-	return (this->_value);
-}
-
-int	Converter::getType( void ) const
-{
-	return (this->_type);
 }
