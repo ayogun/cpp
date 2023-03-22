@@ -6,7 +6,7 @@
 #    By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 14:30:54 by yogun             #+#    #+#              #
-#    Updated: 2023/03/14 00:41:47 by yogun            ###   ########.fr        #
+#    Updated: 2023/03/22 19:27:54 by yogun            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,10 @@ CC = g++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 # Set the name of the executable to create
-NAME = BureaucratEXE
+NAME = serializeme
 
 # Set the source files to compile
-SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRC = main.cpp Serializer.cpp
 
 # Generate a list of object files from the source files
 OBJ = $(SRC:.cpp=.o)
