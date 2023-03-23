@@ -6,7 +6,7 @@
 #    By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 14:30:54 by yogun             #+#    #+#              #
-#    Updated: 2023/03/21 21:59:44 by yogun            ###   ########.fr        #
+#    Updated: 2023/03/23 10:38:55 by yogun            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,10 @@ CC = g++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 # Set the name of the executable to create
-NAME = convert
+NAME = PMERGEME
 
 # Set the source files to compile
-SRC = main.cpp ScalarConverter.cpp
+SRC = main.cpp PmergeMerge.cpp
 
 # Generate a list of object files from the source files
 OBJ = $(SRC:.cpp=.o)
