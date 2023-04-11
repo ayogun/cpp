@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:07:09 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/14 00:51:56 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/11 13:52:47 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class PresidentialPardonForm : public AForm{
 		PresidentialPardonForm & operator=(const PresidentialPardonForm & other);
 
 		// methods
-		bool				execute(Bureaucrat const & executor) const;
+		bool				execute(Bureaucrat const & executor) const; // execute function has been inherited from AForm and is overriden here
 		std::string			getTarget(void) const;
 
 	private:

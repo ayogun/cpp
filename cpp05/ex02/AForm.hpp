@@ -19,6 +19,20 @@
 
 class Bureaucrat;
 
+/*
+    In C++, you can turn a class into an abstract class by declaring 
+    at least one pure virtual function 
+    in the class. A pure virtual function is a virtual function 
+    that is declared in the base class 
+    but has no implementation. It is denoted by appending "= 0" at the end 
+    of the function declaration. Check line 73.
+*/
+
+// Aform class is abstract class. Because it has a pure virtual function which is execute.
+// So what does it mean? It means that AForm class cannot be instantiated. It can only be inherited.
+// So we can create a class that inherits from AForm and override the execute method.
+// For example, we can create a class called PresidentialPardonForm that inherits from AForm and override the execute method.
+// However, if we would like to instantiate Aform class, we can do it by creating a class that inherits from AForm and does not override the execute method.
 class AForm {
 public:
     AForm(void); // default constructor

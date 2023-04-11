@@ -49,7 +49,8 @@ AForm::~AForm(void) {
 
 // assignment operator overload
 AForm& AForm::operator=(const AForm& other) {
-    if (this != &other) {
+    if (this != &other)
+    {
         _isSigned = other._isSigned;
     }
     return *this;
@@ -65,21 +66,24 @@ bool AForm::getIsSigned() const {
     return _isSigned;
 }
 
-// getter methods for _signGrade and _executeGrade
+// getter methods for _signGrade
 int AForm::getSignGrade() const {
     return _signGrade;
 }
 
+// getter methods for _executeGrade
 int AForm::getExecuteGrade() const {
     return _executeGrade;
 }
 
 // sign method that takes a bureaucrat object and signs the AForm if grade is high enough
 void AForm::beSigned(const Bureaucrat& bureaucrat) {
-    if (bureaucrat.getGrade() <= _signGrade) {
+    if (bureaucrat.getGrade() <= _signGrade)
+    {
         _isSigned = true;
     }
-    else {
+    else
+    {
         throw GradeTooLowException();
     }
 }
@@ -90,23 +94,28 @@ os << "AForm name: " << AForm.getName() << std::endl;
 os << "Sign grade required: " << AForm.getSignGrade() << std::endl;
 os << "Execute grade required: " << AForm.getExecuteGrade() << std::endl;
 os << "Is signed: ";
-if (AForm.getIsSigned()) {
+if (AForm.getIsSigned())
+{
 os << "yes" << std::endl;
 }
-else {
+else
+{
 os << "no" << std::endl;
 }
 return os;
 }
 
+// Exception message for when a grade is too low
 const char* AForm::GradeTooLowException::what() const throw() {
 	return "Grade is too low!";
 }
 
+// Exception message for when a grade is too high
 const char* AForm::GradeTooHighException::what() const throw() {
 	return "Grade is too high!";
 }
 
+//  Exception message for when a form is not signed
 const char* AForm::FormNotSignedException::what() const throw() {
 	return "Form is not signed!";
 }

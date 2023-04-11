@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:55:35 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/21 18:39:30 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/11 13:31:07 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ public:
     Form& operator=(const Form& other); // assignment operator overload
 
     // exceptions for grades that are too high or low
-    class GradeTooHighException : public std::exception {
+    class GradeTooHighException : public std::exception
+    {
     public:
         virtual const char* what() const throw();
     };
-    class GradeTooLowException : public std::exception {
+    class GradeTooLowException : public std::exception
+    {
     public:
         virtual const char* what() const throw();
     };

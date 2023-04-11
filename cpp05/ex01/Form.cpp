@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:56:06 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/21 18:39:23 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/11 13:38:40 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ Form::~Form(void) {
 // assignment operator overload
 Form& Form::operator=(const Form& other) {
     std::cout << "Form assignation operator called" << std::endl;
-    if (this != &other) {
+    if (this != &other)
+    {
         _isSigned = other._isSigned;
     }
     return *this;
@@ -59,10 +60,12 @@ std::string Form::getName() const {
     return _name;
 }
 
+// Getter method to check whether form is signed
 bool Form::getIsSigned() const {
     return _isSigned;
 }
 
+// Getter method for sign grade
 int Form::getSignGrade() const {
     return _signGrade;
 }
@@ -73,11 +76,13 @@ int Form::getExecuteGrade() const {
 
 // sign method that takes a bureaucrat object and signs the form if grade is high enough
 void Form::beSigned(const Bureaucrat& bureaucrat) {
-    if (bureaucrat.getGrade() <= _signGrade && !_isSigned) {
+    if (bureaucrat.getGrade() <= _signGrade && !_isSigned)
+    {
         std::cout << "Form " << _name << " signed by " << bureaucrat.getName() << std::endl;
         _isSigned = true;
     }
-    else {
+    else
+    {
         throw GradeTooLowException();
     }
 }
@@ -97,10 +102,12 @@ std::ostream& operator<<(std::ostream& os, const Form& form) {
     return os;
 }
 
+// Exception message 
 char const* Form::GradeTooHighException::what() const throw() {
 	return "Grade is too high!";
 }
 
+// Exception messgae
 char const* Form::GradeTooLowException::what() const throw() {
 	return "Grade is too low!";
 }

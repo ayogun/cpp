@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:45:59 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/20 23:05:28 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/11 13:30:20 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ public:
     Bureaucrat(const Bureaucrat& other);                       // copy constructor
     ~Bureaucrat(void);                                       // destructor
 
-    Bureaucrat& operator=(const Bureaucrat& other);
+    Bureaucrat& operator=(const Bureaucrat& other);  // qassign operator
 
 
     // Getters
@@ -48,15 +48,16 @@ public:
     int getGrade() const;
 
     // Methods
-    void incrementGrade();
-    void decrementGrade();
-    void signForm(Form& form);
+    void incrementGrade();  // Increase grade decrease the grade, because grade is the highest level of the bureaucrat is 1 and the lowest level is 150.
+    void decrementGrade();  // grade can not be lower than 150
+    void signForm(Form& form);  // Sign the form. If the grade is too low, it will throws an exception.
 
 private:
     const std::string _name;
     int _grade;
 };
 
+// Overload operator. By this way we can print the object with cout.
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj);
 
 #endif

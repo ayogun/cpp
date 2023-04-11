@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:04:15 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/21 19:59:45 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/11 13:54:14 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72
 	// std::cout << "RobotomyRequestForm Default Constructor called" << std::endl;
 }
 
+// Constructor with target
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
 	// std::cout << "RobotomyRequestForm Default Constructor called" << std::endl;
@@ -47,7 +48,7 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &
 	return (*this);
 }
 
-// Getters
+// Getter for target
 std::string	RobotomyRequestForm::getTarget(void) const
 {
 	return(this->_target);

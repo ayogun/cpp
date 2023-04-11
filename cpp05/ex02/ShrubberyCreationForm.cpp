@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:03:59 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/21 19:53:57 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/11 14:04:04 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ std::string	ShrubberyCreationForm::getTarget(void) const
 	return(this->_target);
 }
 
-// In this function we draw a diamond.
-void	drawDiamond(std::string name)
+// In this function we draw faces with ASCII art.
+void	drawFaces(std::string name)
 {
 	std::ofstream		ofs;
 
@@ -65,11 +65,10 @@ void	drawDiamond(std::string name)
 		std::cerr << "Error: Can't create the file!" << std::endl;
 		return ;
 	}
-    ofs << "  *  " << std::endl;
-    ofs << " *** " << std::endl;
-    ofs << "*****" << std::endl;
-    ofs << " *** " << std::endl;
-    ofs << "  *  " << std::endl;
+	ofs << "( ͡❛ ͜ʖ ͡❛)" << std::endl;
+	ofs << "【 ͡◐ ͜ʖ ͡◐】" << std::endl;
+	ofs << "( ͡❛ ͜ʖ ͡❛)" << std::endl;
+	ofs << "【 ͡◐ ͜ʖ ͡◐】" << std::endl;
 	ofs << std::endl;
 	ofs.close();
 }
@@ -82,6 +81,6 @@ bool	ShrubberyCreationForm:: execute(Bureaucrat const & executor) const
 	else if (executor.getGrade() > this->getExecuteGrade())
 		return (false);
 	else
-		drawDiamond(this->getTarget());
+		drawFaces(this->getTarget());
 	return(true);
 }

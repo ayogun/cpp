@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:45:59 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/17 15:52:25 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/11 13:26:57 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ public:
     Bureaucrat(const Bureaucrat& other);                       // copy constructor
     ~Bureaucrat(void);                                       // destructor
 
-    Bureaucrat& operator=(const Bureaucrat& other);
+    Bureaucrat& operator=(const Bureaucrat& other);     // assign operator
 
 
     // Getters
@@ -53,6 +53,7 @@ private:
     int _grade;
 };
 
+// Overload operator. By this way we can print the object with cout.
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj);
 
 #endif
