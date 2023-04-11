@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/22 21:08:22 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/11 16:54:19 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 
 // This is a template class, so it can be used with any type.
 template<typename T>
+
 class	Array {
 	public:
 		Array< T >( void ) 									// Default constructor
 		{
 			this->_num = 0;
 			this->_arr = NULL;
-			std::cout << "Default Constructor invoked" << std::endl;
+			//std::cout << "Default Constructor invoked" << std::endl;
 			return ;
 		}
 		
@@ -31,7 +32,7 @@ class	Array {
 		{
 			this->_num = n;
 			this->_arr = new T[n];
-			std::cout << "Constructor invoked" << std::endl;
+			//std::cout << "Constructor invoked" << std::endl;
 			return ;
 		}
 		
@@ -74,8 +75,7 @@ class	Array {
 			return (this->_num);
 		}
 
-	// Those attributes are protected rather than private, so that they can be accessed by the derived classes. Remember! This is only and only a template.
-	protected:
+	private:
 		unsigned int	_num;
 		T*				_arr;
 };
