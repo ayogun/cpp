@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/22 19:04:45 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/11 14:56:36 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,17 @@ class Converter {
 		Converter & operator=(const Converter & other); // assignation operator
 
 		/*****************************************************************************************/
-
+		
+		// Exception for impossible conversion
 		class ConverterImpossible : public std::exception {
 			public:
-				virtual const char *what() const throw()
-				{
-					return ("impossible");
-				}
+				virtual const char *what() const throw();
 		};
 
+		// Exception for non displayable char
 		class CharNonDisplayable : public std::exception {
 			public:
-				virtual const char *what() const throw()
-				{
-					return ("Non diplayable");
-				}
+				virtual const char *what() const throw();
 		};
 		
 		/*****************************************************************************************/

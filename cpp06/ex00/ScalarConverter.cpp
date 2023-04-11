@@ -6,28 +6,33 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:17 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/22 19:08:12 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/11 15:13:46 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-	Implicit casts are automatic type conversions that happen when I assign a value of one data type to another data type. Promotion casts are implicit casts that convert a value of a smaller data type to a larger data type. For example, converting an int to a float or double.
+	Implicit casts are automatic type conversions that happen 
+	when I assign a value of one data type to another data type. 
+	Promotion casts are implicit casts that convert a value of a smaller data type 
+	to a larger data type. For example, converting an int to a float or double.
 
 	PDF is saying that I should only use implicit casts for promotion casts only. This means that I should only use implicit casts when I are converting from a smaller data type to a larger data type.
 */
 
 #include "ScalarConverter.hpp"
 
-
+// Default constructor
 Converter::Converter(void) : _value("default"), _type(STRING)
 {
-	std::cout << "Default Constructor called" << std::endl;
+	//std::cout << "Default Constructor called" << std::endl;
 }
 
+// Constructor with value
 Converter::Converter(const std::string input) : _value(input), _type(STRING)
 {
-	std::cout << "Constructor called" << std::endl;
+	//std::cout << "Constructor called" << std::endl;
 	this->setType();
+	return ; // If you want to print the type of input, delete this return
 	switch (this->getType())
 	{
 		case STRING:
@@ -51,20 +56,23 @@ Converter::Converter(const std::string input) : _value(input), _type(STRING)
 	}
 }
 
+// Destructor
 Converter::~Converter(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
+// copy constructor
 Converter::Converter(const Converter & other)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
+// ASSIGN operator
 Converter & Converter::operator=(const Converter & other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	//std::cout << "Copy assignment operator called" << std::endl;
 	if (this == &other)
 		return (*this);
 	this->_value = other.getValue();	// copy value
@@ -75,24 +83,28 @@ Converter & Converter::operator=(const Converter & other)
 
 /**********************   MEMBER FUNCTIONS    *********************/
 
+// getter for _type
 int	Converter::getType( void ) const
 {
 	return (this->_type);
 }
 
+// getter for _value
 std::string	Converter::getValue( void ) const
 {
 	return (this->_value);
 }
 
+// Convert input to int data type
 int	Converter::toInt( void ) const
 {
 	int	i;
 
+	// First we check the input type with getType function and put it into switch case
 	switch (this->getType())
 	{
 		case CHAR:
-			i = static_cast<int>(this->getValue()[0]); // char to int
+			i = static_cast<int>(this->getValue()[0]); // char to int. Here we use static_cast because we know that char is smaller than int. So this is promotion cast.
 			break;
 		case STRING:			// if the input is string, we can't convert it to int
 			throw ConverterImpossible();
@@ -109,6 +121,7 @@ int	Converter::toInt( void ) const
 	return (i);
 }
 
+// Convert input to char data type
 char	Converter::toChar( void ) const
 {
 	int			i;
@@ -131,14 +144,16 @@ char	Converter::toChar( void ) const
 			}
 	}
 
+	// if the int value is greater than 127, we throw exception because ascii table has only 128 characters
 	if( i > 127)
 		throw ConverterImpossible();
-	else if (i <= 31 || i == 127)
+	else if (i <= 31 || i == 127)		// if the int is smaller than 31 or equal to 127, we throw exception because it is not printable char
 		throw CharNonDisplayable();
 		
 	return (i);
 }
 
+// Convert input to double data type
 double	Converter::toDouble( void ) const
 {
 	double d;
@@ -146,7 +161,7 @@ double	Converter::toDouble( void ) const
 	switch (this->getType())
 	{
 		case CHAR:
-			d = static_cast<float>(this->getValue()[0]);
+			d = static_cast<float>(this->getValue()[0]);	// char to double. Smallar to larger data type. So we use static_cast which is promotion cast.
 			break;
 		case STRING:
 			throw ConverterImpossible();
@@ -163,6 +178,7 @@ double	Converter::toDouble( void ) const
 	return (d);
 }
 
+// Convert input to float data type
 float	Converter::toFloat( void ) const
 {
 	float f;
@@ -170,7 +186,7 @@ float	Converter::toFloat( void ) const
 	switch (this->getType())
 	{
 		case CHAR:
-			f = static_cast<float>(this->getValue()[0]); // char to float
+			f = static_cast<float>(this->getValue()[0]); // char to float. And yes you guessed right. Promotion cast again :) 
 			break;
 		case STRING:
 			throw ConverterImpossible();
@@ -187,6 +203,7 @@ float	Converter::toFloat( void ) const
 	return (f);
 }
 
+// In this function we check if the input is nan, +inf or -inf and so on and so on. This is a meaningless part of the proejct which was mandated by the pdf -_-
 bool	Converter::NanMessage( void ) const
 {
 	if (this->getValue() == "nan" || this->getValue() == "+inf" || this->getValue() == "-inf")
@@ -256,4 +273,16 @@ void	Converter::setType(void)
 	}
 	else
 		this->_type = STRING;
+}
+
+// Exception message for impossible conversion
+char const * Converter::ConverterImpossible::what() const throw()
+{
+	return ("impossible");
+}
+
+// Exception message for non displayable char
+char const * Converter::CharNonDisplayable::what() const throw()
+{
+	return ("Non displayable");
 }
