@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 20:03:27 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/21 20:32:25 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/11 14:06:25 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@ class Intern
 {
 	public:
 	// Constructor methods
-		Intern(void);
-		Intern(const Intern &src);
+		Intern(void);	// Default Constructor
+		Intern(const Intern &src); // Copy Constructor
 
 		~Intern(void); // Deconstructor
 
 		Intern &operator=(const Intern &src); 	// Overloaded Operator
 
+		// pdf requierement
 		AForm *makeForm(const std::string form, const std::string target);
 
 };
