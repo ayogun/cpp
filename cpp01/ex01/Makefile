@@ -6,7 +6,7 @@
 #    By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 12:06:55 by yogun             #+#    #+#              #
-#    Updated: 2023/03/06 21:21:16 by yogun            ###   ########.fr        #
+#    Updated: 2023/04/11 23:37:29 by yogun            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RESET = \033[0m
 RED = \033[0;31m
 
 # Set the compiler to use
-CC = g++
+CC = c++
 # Set the compiler flags to use
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 

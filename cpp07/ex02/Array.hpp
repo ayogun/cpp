@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/04/11 16:54:19 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/11 17:23:44 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ class	Array {
 		T & operator[](unsigned int num)
 		{
 			if (num >= size())
-				throw std::out_of_range("Out of the array's range!");
+				throw std::out_of_range("Out of the range!");
 			return (this->_arr[num]);			// Return the element at index num.
 		}
 

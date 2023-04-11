@@ -6,12 +6,12 @@
 #    By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 12:06:55 by yogun             #+#    #+#              #
-#    Updated: 2023/03/06 19:08:40 by yogun            ###   ########.fr        #
+#    Updated: 2023/04/11 23:37:23 by yogun            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Declare the compiler to use
-CC = g++
+CC = c++
 
 # Flags for the compiler
 CFLAGS = -Wall -Werror -Wextra -std=c++98
