@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/04/11 14:56:36 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/12 17:25:22 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 
 class Converter {
 	public:
-		Converter(void);						// default constructor
 		Converter(std::string value);					// constructor with value
 		Converter(const Converter & fixed);		// copy constructor		
 		~Converter(void);						// destructor
@@ -61,6 +60,7 @@ class Converter {
 		
 
 	private:
+		Converter(void);						// default constructor
 		std::string		_value;			// value to convert, in other words it will be sent by user
 		void			setType(void);	// set the type of the value
 		int				_type; 			// 0 = int, 1 = char, 2 = float, 3 = double, 4 = string

@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:17 by yogun             #+#    #+#             */
-/*   Updated: 2023/04/11 15:19:43 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/12 17:26:43 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ typedef struct Data
 class Serializer
 {
 	public:
-	// Default constructor
-		Serializer(void);
 		Serializer(const Serializer &src);	// Copy constructor
 
 	// Deconstructor
@@ -43,6 +41,9 @@ class Serializer
 	// MEMBER Methods
 		uintptr_t serialize(Data *ptr);
 		Data *deserialize(uintptr_t raw);
+	
+	private:
+		Serializer(void);	// Default constructor
 
 };
 
