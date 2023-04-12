@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:15:06 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/22 22:56:50 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/12 23:08:26 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int main()
 {
 	// creation of a string stack
 	MutantStack<std::string> mstack_string;
-	mstack_string.push("One");
+	mstack_string.push("One");		// push is used to add elements into a stack. And it is member function of stack.
 	mstack_string.push("Two");
-	mstack_string.pop();
+	mstack_string.pop();			// pop is used to delete last from a stack. And it is member function of stack.
 	mstack_string.push("Four");
 	mstack_string.push("Five");
 
@@ -47,7 +47,7 @@ int main()
 		++s_it;
 	}
 
-	std::cout << std::endl << std::endl << "↓↓↓ String Stack Information ↓↓↓\nSize: " << mstack_string.size() << "\nEmpty: " << (mstack_string.empty() ? "true" : "false") << std::endl;
+	std::cout << std::endl << std::endl << " String Stack Information \nSize: " << mstack_string.size() << "\nEmpty: " << (mstack_string.empty() ? "true" : "false") << std::endl;
 	mstack_string.pop();
 	mstack_string.pop();
 	mstack_string.pop();
