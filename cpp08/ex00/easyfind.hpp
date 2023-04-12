@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/04/11 17:49:26 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/12 17:51:44 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 // Template
 template< typename T>
 
-// Here we write typen
 typename T::iterator easyfind(T &input, int i)
 {
 	typename T::iterator	iter;	// iterator to the container
