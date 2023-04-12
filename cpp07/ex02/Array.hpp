@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/04/11 17:23:44 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/12 17:16:32 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ class	Array {
 	public:
 		Array< T >( void ) 									// Default constructor
 		{
-			this->_num = 0;
+			this->_size = 0;
 			this->_arr = NULL;
 			//std::cout << "Default Constructor invoked" << std::endl;
 			return ;
 		}
 		
-		Array< T >( unsigned int n ) 					// Constructor	
+		Array< T >( unsigned int n ) 					// Constructor. It is unsigned int because it is the size of the array and size can't be negative value.
 		{
-			this->_num = n;
-			this->_arr = new T[n];
+			this->_size = n;
+			this->_arr = new T[n];	// We must use new operator to create an array as pdf dictates. Because preventive allocation is forbidden. Preventive allocation is allocating memory for an array before we know how many elements we need.
 			//std::cout << "Constructor invoked" << std::endl;
 			return ;
 		}
@@ -44,39 +44,39 @@ class	Array {
 		
 		~Array< T >( void )						// Destructor
 		{
-			if (this->_num > 0)
+			if (this->_size > 0)
 				delete[] this->_arr;
 		};
 
 		Array & operator=(const Array & other)			// Assignation operator
 		{
-			if (this == &other)
+			if (this == &other)			// If the object is assigned to itself, return the object.
 				return (*this);
-			this->_num = other.size();
+			this->_size = other.getSize();
 			
-			// If the array is not empty, delete it.
-			if (this->_num > 0)
-				this->_arr = new T[this->_num];
+			// If the array size is valid, create a new array.
+			if (this->_size > 0)
+				this->_arr = new T[this->_size];
 
-			// Copy the array.
-			for (unsigned int i = 0; i < this->_num; i++)
+			// Copy the array. One by one. Each element we copy it to the new array.
+			for (unsigned int i = 0; i < this->_size; i++)
 				this->_arr[i] = other._arr[i];
 			return (*this);
 		}
-
-		T & operator[](unsigned int num)
+	
+		T & operator[](unsigned int index)		// Operator overloading. Its' used to access the elements of the array.
 		{
-			if (num >= size())
+			if (index >= getSize())
 				throw std::out_of_range("Out of the range!");
-			return (this->_arr[num]);			// Return the element at index num.
+			return (this->_arr[index]);			// Return the element at index.
 		}
 
-		unsigned int	size(void) const {
-			return (this->_num);
+		unsigned int	getSize(void) const {
+			return (this->_size);
 		}
 
 	private:
-		unsigned int	_num;
+		unsigned int	_size;
 		T*				_arr;
 };
 
