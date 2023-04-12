@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:15:06 by yogun             #+#    #+#             */
-/*   Updated: 2023/04/11 17:21:55 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/12 12:51:49 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 int main()
 {
-    // Create an array of 100 integers
-    Array<int> numbers(100);
-    int* ptrARR = new int[100]; // Create an array of 100 integers with pointert
+    
+    Array<int> numbers(100);            // Create an array of 100 integers
+    int* ptrARR = new int[100];         // Create an array of 100 integers with pointert
 	
+    
     // seed the random number generator. It provides a different sequence of numbers each time the program is run.
     srand(time(NULL));						
 	
+
 	// fill the array with random numbers
     for (int i = 0; i < 100; i++)
     {
@@ -29,6 +31,9 @@ int main()
         ptrARR[i] = value;
     }
     
+
+/**********************************************************/
+
     //SCOPE 1
     {
         Array<int> tmp(100);    // Create an array of 100 integers
@@ -91,6 +96,9 @@ int main()
         std::cout << "You are trying to access out of range. WTF?" << std::endl;
     }
     }
+
+/**********************************************************/
+
 
     delete [] ptrARR; // free the memory if you don't want to have a memory leak :'(
 
