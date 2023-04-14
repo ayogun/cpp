@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/04/12 23:04:44 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/14 02:24:01 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 template <class T>
 
-class MutantStack : public std::stack<T>
+class MutantStack : public std::stack<T> // MutantStack is a child of std::stack
 {
 public:
 
@@ -27,7 +27,7 @@ public:
 /************************* TYPEDEF **********************************/
 	typedef std::stack<T> stack;							
 	typedef typename stack::container_type container;	
-	typedef typename container::iterator iterator; 		
+	typedef typename container::iterator iterator; 		// typedef is a keyword that allows you to define an alias for a type. Typename is a keyword that allows you to refer to a type that is nested within another type.
 /************************* TYPEDEF **********************************/
 
 	// Default Constructor
@@ -65,7 +65,7 @@ public:
 	// Start iterator
 	iterator begin(void)
 	{
-		return (stack::c.begin());
+		return (stack::c.begin()); // Here the c is a container of the stack class. And the begin() function is a member function of the container class. 
 	}
 
 	// finish iterator

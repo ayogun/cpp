@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/25 22:26:08 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/13 23:56:44 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
 	void	ft_subtract(int *i, float *old_top, float *result);
 
 
-// 
+// ********************************************************************
 private:
 	std::stack<float>  _numbers;
 

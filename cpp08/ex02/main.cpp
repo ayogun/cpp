@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:15:06 by yogun             #+#    #+#             */
-/*   Updated: 2023/04/12 23:08:26 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/14 02:15:52 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int main()
 	// ******************************** start working with string stack ********************************
 	MutantStack<std::string>::iterator s_it = mstack_string.begin();
 	MutantStack<std::string>::iterator e_it = mstack_string.end();
+
+	// Normally you cannot use iterator with stack. Here I can use the iterator to iterate through the stack because in the MutantStack.hpp what I did with typenames is
 	
 	
 	++s_it;

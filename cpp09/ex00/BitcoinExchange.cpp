@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/25 17:16:08 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/13 23:51:06 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ static std::string& endTrim(std::string& str)
     return str;
 }
 
-// Trim whitespace characters from both ends of a string.
-// endTrim: Remove whitespace from the end of a string.
-// startTrim: Remove whitespace from the beginning of a string.
+/* 
+	Trim whitespace characters from both ends of a string.
+		> endTrim: Remove whitespace from the end of a string.
+		> startTrim: Remove whitespace from the beginning of a string.
+*/
 static std::string& trim(std::string& str)
 {
     return startTrim(endTrim(str));
@@ -66,6 +68,9 @@ std::map<std::string, float> Bitcoin::getData(void)
 /* str: String to be split. So, it is one complete line from the txt file.
  delimiter: The delimiter is the character that separates the substrings. In our case, the delimiter is " | "
 Here we split the string into a vector of strings. Each element of the vector is a substring.
+
+From something like this: 2019-01-01 | 1000 
+to this: [2019-01-01, 1000]     -> Here we have two substrings. The first substring is the date and the second substring is the value. And delimiter is " | "
  */
 std::vector<std::string> Bitcoin::splitString(std::string str, char delimiter)
 {
@@ -135,7 +140,8 @@ void Bitcoin::checkInputFile(std::string filePath)
 			// Here we compare 
 			if (iterator != this->data.end() && trim(vectorLine[0]) != this->data.rbegin()->first)
 			{
-	    	    std::pair<std::string, float> ptr = *(--iterator); 
+				
+	    	    std::pair<std::string, float> ptr = *(--iterator); 	// Here we get the previous element of the iterator. The reason for that is because we want to get the lower value that is closest to the absent input.
 
 				try
 				{	
@@ -271,3 +277,9 @@ Bitcoin::Bitcoin(Bitcoin const &var)
 {
 	*this = var;
 }
+
+
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/

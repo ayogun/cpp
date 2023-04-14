@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/25 12:48:05 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/13 19:33:03 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 class Bitcoin
 {
 public:
+
+	/************************ ORTHODOX CANONICAL FORM ******************************/
 	// Default constructor
 	Bitcoin(void);
 	// Destructor
@@ -32,9 +34,12 @@ public:
 	Bitcoin& operator=(Bitcoin const &var);
 	// Copy constructor
 	Bitcoin(Bitcoin const &var);
+	/************************ ORTHODOX CANONICAL FORM ******************************/
 
-	/*************** MEMBER FUNCTIONS ***************/
 
+
+
+	/************************ MEMBER FUCNTIONS ******************************/
 	// Setter
 	void setData(std::string date, float value);
 
@@ -46,6 +51,7 @@ public:
 
 	// Function to split a string into a vector of strings.
 	std::vector<std::string> splitString(std::string str, char delimiter);  
+	/************************ MEMBER FUCNTIONS ******************************/
 
 	
 private:

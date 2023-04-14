@@ -6,16 +6,17 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/03/25 22:28:26 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/13 23:58:18 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
+/******************************** ORTHODOX CANONICAL *****************************************************/
 // Default constructor
 RPN::RPN(void)
 {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
@@ -23,24 +24,28 @@ RPN::RPN(void)
 RPN::RPN(RPN const &src)
 {
 	*this = src;
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 	return ;
 }
 
 // destructor
 RPN::~RPN(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
 // Copy assignment operator
 RPN	&RPN::operator=(RPN const &rpn)
 {
-	std::cout << "Copy assignment operator called\n";
+	//std::cout << "Copy assignment operator called\n";
 	this->_numbers = rpn._numbers;
 	return (*this);
 }
+/******************************** ORTHODOX CANONICAL *****************************************************/
+
+
+
 
 // ****************** Helper functions *********************
 static int isCharValid(char c)
@@ -58,12 +63,15 @@ static void printError(std::string str)
 
 
 
-			/*
+
+
+/*************************** MATH FUNCTIONS *********************************************/
+/*
 				pop() = removes the top element from the stack, effectively reducing its size by one.
 				empty() = if stack is empty, returns true, otherwise returns false.
 				top() = returns a reference to the top element in the stack.
 				push() = adds a new element at the top of the stack, above its current top element.
-			*/
+*/
 void RPN::ft_multiply(int *i, float *old_top, float *result)
 {
 	(*i)++;
@@ -108,7 +116,7 @@ void RPN::ft_subtract(int *i, float *old_top, float *result)
 	_numbers.push(*result);
 }
 
-/************************************************************************/
+/*************************** MATH FUNCTIONS *********************************************/
 
 
 
