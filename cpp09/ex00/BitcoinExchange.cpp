@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/04/13 23:51:06 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/14 17:11:09 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,8 +101,27 @@ std::vector<std::string> Bitcoin::splitString(std::string str, char delimiter)
 }
 
 
+// Check if the date is valid or not.
+bool Bitcoin::isDateValid(int year, int month, int day)
+{
+	if (year < 0 || month < 1 || month > 12 || day < 1 || day > 31)
+	{
+		return false;
+	}
+	if (month == 2 && day > 29)
+	{
+		return false;
+	}
+	if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+	{
+		return false;
+	}
+	return true;
+}
 
-// In this function what we do is we read the input file and we check if the input is valid or not.
+
+
+// In this function what we do is we read the input file and we check if the input is valid or not. In our case, it is the file that was given to us. The file is called input.txt.
 void Bitcoin::checkInputFile(std::string filePath)
 {
 	int i = 0;
@@ -131,6 +150,9 @@ void Bitcoin::checkInputFile(std::string filePath)
 			// Check if the input is valid or not. If the input is not valid, print an error message and continue. The length function is used to check if the string is empty or not. The size function is used to check if the vector is empty or not.
 			if (vectorLine[1].length() == 0 || vectorLine.size() < 2)
 				std::cout << "Error: bad input => " << vectorLine[0] << std::endl;
+			
+			if (!Bitcoin::isDateValid(std::stoi(vectorLine[0].substr(0, 4)), std::stoi(vectorLine[0].substr(5, 2)), std::stoi(vectorLine[0].substr(8, 2))))
+				std::cout << "Error: bad date => " << vectorLine[0] << std::endl;
 				
 				
 			std::map<std::string, float>::iterator iterator = this->data.upper_bound(trim(vectorLine[0])); // upper_bound returns an iterator to the first element in the map that is greater than the key. Txt'den gelen tarihin map'teki tarihten küçük olduğu düğümü bulup, iterator'a atıyoruz. Eğer txt'den gelen tarih map içindeki tarihlerin hepsinden daha büyükse, iterator map'in son elemanınını gösterir. 
@@ -188,6 +210,12 @@ void Bitcoin::checkInputFile(std::string filePath)
 	}
 	txt_file.close();
 }
+
+
+
+
+
+
 
 
 

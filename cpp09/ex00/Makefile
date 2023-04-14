@@ -6,7 +6,7 @@
 #    By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 14:30:54 by yogun             #+#    #+#              #
-#    Updated: 2023/04/11 23:38:06 by yogun            ###   ########.fr        #
+#    Updated: 2023/04/14 16:56:20 by yogun            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,4 +60,12 @@ re: remsg fclean all
 remsg: 
 	@echo "$(CYAN)🔁 Rebuilding...$(RESET)"
 
-.PHONY: all clean fclean re remsg
+test:
+	@echo "$(CYAN)🔁 Testing...$(RESET)"
+	@echo
+	@echo "__________ TEST-1 _____________ , result = like pdf"
+	./$(NAME) input.txt
+	@echo
+
+	
+.PHONY: all clean fclean re remsg test

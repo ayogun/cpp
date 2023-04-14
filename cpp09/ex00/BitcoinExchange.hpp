@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/04/13 19:33:03 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/14 17:07:32 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ public:
 	std::map<std::string, float> getData();		
 
 	// Function to split a string into a vector of strings.
-	std::vector<std::string> splitString(std::string str, char delimiter);  
+	std::vector<std::string> splitString(std::string str, char delimiter); 
+	
+	// Function to check if the date is valid.
+	bool isDateValid(int year, int month, int day); 
 	/************************ MEMBER FUCNTIONS ******************************/
 
 	

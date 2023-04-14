@@ -6,7 +6,7 @@
 /*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:14:07 by yogun             #+#    #+#             */
-/*   Updated: 2023/04/14 01:57:22 by yogun            ###   ########.fr       */
+/*   Updated: 2023/04/14 15:06:01 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,18 @@ public:
 
 	// ****************** Member functions *********************
 	void	ft_sort(char **tab);
-	void	vectorPrint();
-	void	listPrint();
-	double	sortVector();
-	double	sortList();
-	void merge(std::vector<int>& arr, int left, int mid, int right);
-	void insertionSort(std::vector<int>& arr, int left, int right);
-	void mergeInsertionSort(std::vector<int>& arr, int left, int right);
 
-	void insertionSortList(std::list<int>& A, int p, int q);
-	void mergeList(std::list<int>& A, int p, int q, int r);
-	void mergeInsertList(std::list<int>& A, int p, int r);
-
-
+	double	sort_Vector();
+	void 	mergeSort_Vector(std::vector<int>& arr, int left, int mid, int right);
+	void 	insertionSort_Vector(std::vector<int>& arr, int left, int right);
+	void 	mergeInsertion_Vector(std::vector<int>& arr, int left, int right);
+	void	print_Vector();
+	
+	double	sort_List();
+	void 	mergeSort_List(std::list<int>& arr, int left, int mid, int right);
+	void 	insertionSort_List(std::list<int>& arr, int left, int right);
+	void 	mergeInsertion_List(std::list<int>& arr, int left, int right);
+	void	print_List();
 	// ****************** Member functions *********************
 
 
